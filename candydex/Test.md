@@ -775,9 +775,9 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________
 
 A.S.: Method testable with a Dummy DEX Blueprint findable at this address:
->[DummyDex](https://github.com/alanci17/radix-scrypto/blob/master/src/lib.rs) 
+>[DummyDex](https://github.com/alanci17/radix-scrypto-code/blob/main/dummydex/src/lib.rs) 
 >
->https://github.com/alanci17/radix-scrypto/blob/master/src/lib.rs
+>https://github.com/alanci17/radix-scrypto-code/blob/main/dummydex/src/lib.rs
 
 ----------------------------------------------------------------------------------------------------------
 Simulator reset & New Default-account generation
