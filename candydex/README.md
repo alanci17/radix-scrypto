@@ -201,7 +201,7 @@ Protocol allows the loan of candies as well as $XRD and for reimburse are usable
 either candies and $XRD.
 
 Function testable with a Dummy DEX Blueprint findable at this address:
-https://github.com/alanci17/radix-scrypto-code/blob/main/dummydex/src/lib.rs
+https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs
 
 	
 ----------------------------------------------------------------------------
