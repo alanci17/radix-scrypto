@@ -61,7 +61,7 @@ Let's create some candy tokens.
 |	  HashMap<Address, U64>() Some(Enum(0u8, {Decimal("100000")}));                   |
 | CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";             |
 
-
+---
 >resim new-token-fixed --name "OMICRONGUM" 100000 --symbol "OMG"
 
 └─ ResourceDef: 033f8829bea3d849592fb5dfba1f94d4a95c5683d43f09e78a56d7 = $OMG
@@ -105,7 +105,7 @@ Let's stock candies, inspect resturned resources and Default-account balances.
 |CALL_METHOD Address("$CandyDex-Component") "stock_candy" Bucket("bucket1") Decimal("2");                 |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                              |
 
-
+---
 >resim call-method $CandyDex stock_candy 10000,$OMG 2  
 
 └─ [←[32mINFO ←[0m] ←[32m Added 10000 OMICRONGUM candy, OMG symbol @2XRD price
@@ -121,7 +121,7 @@ Let's stock candies, inspect resturned resources and Default-account balances.
 |CALL_METHOD Address("$CandyDex-Component") "stock_candy" Bucket("bucket1") Decimal("2");                 |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                              |
 
-
+---
 >resim show $Default-account
 
 ├─ { amount: 1, resource_def: $mBadgeTHG_0, symbol: " mBadgeTHG" }
@@ -151,6 +151,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$OMG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $OMG 2000,$THG
 
 | Transaction Manifest                                                                                                       |
@@ -161,6 +162,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$THG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $THG 2000,$OMG
 
 | Transaction Manifest                                                                                                       |
@@ -171,6 +173,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$OMG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $OMG 2000,$THG
 
 | Transaction Manifest                                                                                                       |
@@ -201,6 +204,7 @@ Let's try to stock same candies again using "restock_candy" method.
 |CALL_METHOD Address("$CandyDex-Component") "restock_candy" Bucket("bucket1");                                               |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex restock_candy 10000,$OMG 
 
 ├─ [←[32mINFO ←[0m] ←[32m Added 10000 OMICRONGUM candy, OMG symbol @2XRD price
@@ -217,7 +221,6 @@ Let's try to stock same candies again using "restock_candy" method.
 |CALL_METHOD Address("$CandyDex-Component") "restock_candy" Bucket("bucket1");                                               |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
-
 -------------------------------------------------------------------------------------------
 Let's swap some candies to gain some accrued fee profit.  
 -------------------------------------------------------------------------------------------
@@ -232,6 +235,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$OMG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $OMG 2000,$THG
 
 | Transaction Manifest                                                                                                       |
@@ -242,6 +246,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$THG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $THG 2000,$OMG
 
 | Transaction Manifest                                                                                                       |
@@ -252,6 +257,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$OMG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $OMG 2000,$THG
 
 | Transaction Manifest                                                                                                       |
@@ -282,6 +288,7 @@ Let's try to stock same candies again using "restock_candy" method.
 |CALL_METHOD Address("$CandyDex-Component") "restock_candy" Bucket("bucket1");                                               |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex restock_candy 10000,$OMG 
 
 ├─ [←[32mINFO ←[0m] ←[32m Added 10000 OMICRONGUM candy, OMG symbol @2XRD price
@@ -312,6 +319,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$OMG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $OMG 2000,$THG
 
 | Transaction Manifest                                                                                                       |
@@ -322,6 +330,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$THG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $THG 2000,$OMG
 
 | Transaction Manifest                                                                                                       |
@@ -332,6 +341,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("2000") Address("$OMG") Bucket("bucket1");  |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $OMG 2000,$THG
 
 | Transaction Manifest                                                                                                       |
@@ -397,6 +407,7 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 |CALL_METHOD Address("$CandyDex-Component") "stock_position" BucketRef("badge2");                                            |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex stock_position 1,$mBadgeTHG_2
 
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -418,6 +429,7 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 |CALL_METHOD Address("$CandyDex-Component") "stock_position" BucketRef("badge2");                                            |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex stock_position 1,$mBadgeTHG_1
 
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -439,6 +451,7 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 |CALL_METHOD Address("$CandyDex-Component") "stock_position" BucketRef("badge2");                                            |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex stock_position 1,$mBadgeOMG_0
 
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -460,6 +473,7 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 |CALL_METHOD Address("$CandyDex-Component") "stock_position" BucketRef("badge2");                                            |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex stock_position 1,$mBadgeOMG_1
 
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -481,6 +495,7 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 |CALL_METHOD Address("$CandyDex-Component") "stock_position" BucketRef("badge2");                                            |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex stock_position 1,$mBadgeOMG_2
 
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -529,6 +544,7 @@ Let's unstock some candies.
 |CALL_METHOD Address("$CandyDex-Component") "unstock_candy" Address("$THG") Bucket("bucket1") Bucket("bucket2");	     |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex unstock_candy $THG 10000,$mTHETAGUM 1,$mBadgeTHG_1  
 
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -552,6 +568,7 @@ Let's unstock some candies.
 |CALL_METHOD Address("$CandyDex-Component") "unstock_candy" Address("$THG") Bucket("bucket1") Bucket("bucket2");	     |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex unstock_candy $OMG 10000,$mOMICRONGUM 1,$mBadgeOMG_0  
 
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -575,6 +592,7 @@ Let's unstock some candies.
 |CALL_METHOD Address("$CandyDex-Component") "unstock_candy" Address("$OMG") Bucket("bucket1") Bucket("bucket2");	     |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex unstock_candy $OMG 10000,$mOMICRONGUM 1,$mBadgeOMG_1  
 
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -598,7 +616,6 @@ Let's unstock some candies.
 |CALL_METHOD Address("$CandyDex-Component") "unstock_candy" Address("$OMG") Bucket("bucket1") Bucket("bucket2");	     |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
-
 -------------------------------------------------------------------------------------------
 Let's issue another candy token, stock it & swap some candies to rebalance CandyDex Component amounts.  
 -------------------------------------------------------------------------------------------
@@ -614,6 +631,7 @@ Let's issue another candy token, stock it & swap some candies to rebalance Candy
 |   HashMap<Address, U64>() Some(Enum(0u8, {Decimal("100000")}));							     |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex stock_candy 10000,$ETG 2 
 
 └─ [←[32mINFO ←[0m] ←[32m Added 10000 ETAGUM candy, ETG symbol @2XRD price
@@ -630,6 +648,7 @@ Let's issue another candy token, stock it & swap some candies to rebalance Candy
 |CALL_METHOD Address("$CandyDex-Component") "stock_candy" Bucket("bucket1") Decimal("2");				     |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $ETG 2000,$OMG
 
 | Transaction Manifest                                                                                                       |
@@ -640,6 +659,7 @@ Let's issue another candy token, stock it & swap some candies to rebalance Candy
 |CALL_METHOD Address("$CandyDex-Component") "buy_exact_candy_sell_candy" Decimal("500") Address("$ETG") Bucket("bucket1");   |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex buy_exact_candy_sell_candy 500 $ETG 2000,$THG
 
 | Transaction Manifest                                                                                                       |
@@ -677,6 +697,7 @@ Let's unstock last candies.
 |CALL_METHOD Address("$CandyDex-Component") "unstock_candy" Address("$THG") Bucket("bucket1") Bucket("bucket2");	     |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex unstock_candy $OMG 5000,$mOMICRONGUM 1,$mBadgeOMG_2  
 
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -700,6 +721,7 @@ Let's unstock last candies.
 |CALL_METHOD Address("$CandyDex-Component") "unstock_candy" Address("$OMG") Bucket("bucket1") Bucket("bucket2");	     |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
+---
 >resim call-method $CandyDex unstock_candy $OMG 5000,$mOMICRONGUM 1,$mBadgeOMG_2  
 
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -745,7 +767,7 @@ Let's check out our Default-account balances.
 
 ├─ { amount: 0, resource_def: $mBadgeOMG_2, symbol: " mBadgeOMG" }
 
-├─ { amount: 0, resource_def: 03f7c9f4e360270a74b3d90207272eda123ae05df1f35aab17d20e, name: " mOMICRONGUM", symbol: " mOMG" }
+├─ { amount: 0, resource_def: $mOMICRONGUM, name: " mOMICRONGUM", symbol: " mOMG" }
 
 └─ { amount: 99599.600107890197844194, resource_def: $OMG, name: "OMICRONGUM", symbol: "OMG" }
 
@@ -785,6 +807,11 @@ Publish CandyDex Blueprint & Component instantiate
 
 └─ Component: 02ac00a15a87df7c43b55e49d5d229bc770136c108586a9d7b38b5   = $CandyDex
 
+| Transaction Manifest                                                               |
+|------------------------------------------------------------------------------------|
+|CALL_FUNCTION Address("$Package") "CandyDex" "new" Decimal("1");		     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";	     |
+
 -------------------------------------------------------------------------------------------
 Let's check out CandyDex Component.
 -------------------------------------------------------------------------------------------
@@ -803,10 +830,24 @@ Let's create some candy tokens.
 
 └─ ResourceDef: $THG = $ALG
 
+| Transaction Manifest                                                                                                      |
+|---------------------------------------------------------------------------------------------------------------------------|
+|CALL_FUNCTION Address("010000000000000000000000000000000000000000000000000001") "System" "new_resource" Enum(0u8, {18u8})  | 
+|HashMap<String, String>("name", "ALPHAGUM", "symbol", "ALG") 0u64 0u64 						    |
+|HashMap<Address, U64>() Some(Enum(0u8, {Decimal("100000")}));							            |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";	                                            |
+
 ---
 >resim new-token-fixed --name "BETAGUM" 100000 --symbol "BTG"
 
 └─ ResourceDef: $OMG = $BTG
+
+| Transaction Manifest                                                                                                      |
+|---------------------------------------------------------------------------------------------------------------------------|
+|CALL_FUNCTION Address("010000000000000000000000000000000000000000000000000001") "System" "new_resource" Enum(0u8, {18u8})  | 
+|HashMap<String, String>("symbol", "BTG", "name", "BETAGUM") 0u64 0u64			     			    	    |
+|HashMap<Address, U64>() Some(Enum(0u8, {Decimal("100000")}));							            |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";	                                            |
 
 -------------------------------------------------------------------------------------------
 Let's check out our Default-account balances.
@@ -835,6 +876,14 @@ Let's stock candies and check Default-account balances.
 
 └─ ResourceDef: 03570bd52401c8b3e6a6e551549f64199cc5c629726627e83211e1
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									     | 
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("50000") Address("$ALG") BucketRef("badge1");		     |
+|TAKE_FROM_WORKTOP Decimal("50000") Address("$ALG") Bucket("bucket1");							     | 
+|CALL_METHOD Address("$CandyDex") "stock_candy" Bucket("bucket1") Decimal("2");				    		     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
+
 ---
 >resim call-method $CandyDex stock_candy 50000,$BTG 1.5  
 
@@ -843,6 +892,14 @@ Let's stock candies and check Default-account balances.
 ├─ ResourceDef: 032387943b7cd89d99ee07d672fd9945029c99300282931690ddab
 
 └─ ResourceDef: 033af09cc79097add03aa9614eadb005e61874681545a1ac2b8caf
+
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									     | 
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("50000") Address("$BTG") BucketRef("badge1");		     |
+|TAKE_FROM_WORKTOP Decimal("50000") Address("$BTG") Bucket("bucket1");							     | 
+|CALL_METHOD Address("$CandyDex") "stock_candy" Bucket("bucket1") Decimal("1.5");				    	     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
 ---
 >resim show $Default-account
@@ -861,8 +918,21 @@ Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" 
 
 ├─ Ok(Some(11235.955056179775277776))
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_xrd_sell_amount_becsx" Address("$ALG") Decimal("5000");		    		     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";		    				     |
+
 ---
 >resim call-method $CandyDex buy_exact_candy_sell_xrd 5000 $ALG 11235.95505617977527778,$XRD
+
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									     |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("11235.95505617977527778") Address("$XRD") BucketRef("badge1");  |
+|TAKE_FROM_WORKTOP Decimal("11235.95505617977527778") Address("$XRD") Bucket("bucket1");				     |
+|CALL_METHOD Address("$CandyDex") "buy_exact_candy_sell_xrd" Decimal("5000") Address("$ALG") Bucket("bucket1");		     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
 ---
 >resim show $Default-account
@@ -881,8 +951,21 @@ Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" 
 
 ├─ Ok(Some(8426.966292134831459595))
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_xrd_sell_amount_becsx" Address("$BTG") Decimal("5000");		    		     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";		    				     |
+
 ---
 >resim call-method $CandyDex buy_exact_candy_sell_xrd 5000 $BTG 8426.966292134831459597,$XRD
+
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									     |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("8426.966292134831459597") Address("$XRD") BucketRef("badge1");  |
+|TAKE_FROM_WORKTOP Decimal("8426.966292134831459597") Address("$XRD") Bucket("bucket1");				     |
+|CALL_METHOD Address("$CandyDex") "buy_exact_candy_sell_xrd" Decimal("5000") Address("$OMG") Bucket("bucket1");		     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
 ---
 >resim show $Default-account
@@ -906,8 +989,21 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 
 ├─ Ok(Some(4005.499438832772167273))
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_xrd_sell_amount_bcsex" Address("$ALG") Decimal("10000");		    		     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";		    				     |
+
 ---
 >resim call-method $CandyDex buy_candy_sell_exact_xrd 4005.499438832772167273 $ALG 10000,$XRD
+
+| Transaction Manifest                                                                                                             |
+|----------------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");										   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("10000") Address("$XRD") BucketRef("badge1");			   |
+|TAKE_FROM_WORKTOP Decimal("10000") Address("$XRD") Bucket("bucket1");								   |
+|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_xrd" Decimal("4005.499438832772167273") Address("$ALG") Bucket("bucket1"); |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                       |
 
 ---
 >resim show $Default-account
@@ -926,8 +1022,21 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 
 ├─ Ok(Some(5143.110113480483853111))
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_candy_buy_amount_bcsex" Address("$BTG") Decimal("10000");			     |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
+		    				     
 ---
 >resim call-method $CandyDex buy_candy_sell_exact_xrd 5143.110113480483853111 $BTG 10000,$XRD
+
+| Transaction Manifest                                                                                                             |
+|----------------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");										   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("10000") Address("$XRD") BucketRef("badge1");			   |
+|TAKE_FROM_WORKTOP Decimal("10000") Address("$XRD") Bucket("bucket1");								   |
+|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_xrd" Decimal("5143.110113480483853111") Address("$BTG") Bucket("bucket1"); |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                       |
 
 ---
 >resim show $Default-account
@@ -957,8 +1066,21 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 
 ├─ Ok(Some(2145.269736455701974126))
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_candy_buy_amount_bcsex" Address("$ALG") Decimal("5000");			             |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
+
 ---
 >resim call-method $CandyDex buy_exact_xrd_sell_candy 5000 2145.269736455701974126,$ALG
+
+| Transaction Manifest                                                                                                           |
+|--------------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");										 |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("2145.269736455701974126") Address("$ALG") BucketRef("badge1");	 |
+|TAKE_FROM_WORKTOP Decimal("2145.269736455701974126") Address("$ALG") Bucket("bucket1");					 |
+|CALL_METHOD Address("$CandyDex") "buy_exact_xrd_sell_candy" Decimal("5000") Bucket("bucket1");					 |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                     |
 
 ---
 >resim show $Default-Account
@@ -977,8 +1099,21 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 
 ├─ Ok(Some(2796.489965398796318523))
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_candy_sell_amount_bexsc" Address("$BTG") Decimal("5000");		             |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
+
 ---
 >resim call-method $CandyDex buy_exact_xrd_sell_candy 5000 2796.489965398796318523,$BTG
+
+| Transaction Manifest                                                                                                        |
+|-----------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									      |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("2796.489965398796318523") Address("$BTG") BucketRef("badge1");   |
+|TAKE_FROM_WORKTOP Decimal("2796.489965398796318523") Address("$BTG") Bucket("bucket1");				      |
+|CALL_METHOD Address("$CandyDex") "buy_exact_xrd_sell_candy" Decimal("5000") Bucket("bucket1");		      		      |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                  |
 
 ---
 >resim show $Default-Account
@@ -998,9 +1133,22 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 >resim call-method $CandyDex get_xrd_buy_amount_bxsec $ALG 3000
 
 ├─ Ok(Some(6537.5007713458179066))
- 
+
+| Transaction Manifest                                                                                                  |
+|-----------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_xrd_buy_amount_bxsec" Address("$ALG") Decimal("3000");			        |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";					        |
+
 --- 
 >resim call-method $CandyDex buy_xrd_sell_exact_candy 6537.5007713458179066 3000,$ALG
+
+| Transaction Manifest                                                                                                  |
+|-----------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									|
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("3000") Address("$ALG") BucketRef("badge1");		|
+|TAKE_FROM_WORKTOP Decimal("3000") Address("$ALG") Bucket("bucket1");							|
+|CALL_METHOD Address("$CandyDex") "buy_xrd_sell_exact_candy" Decimal("6537.5007713458179066") Bucket("bucket1");	|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                            |
 
 ---
 >resim show $Default-Account
@@ -1019,8 +1167,21 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 
 ├─ Ok(Some(5011.39354170172335948))
 
+| Transaction Manifest                                                                                                  |
+|-----------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_xrd_buy_amount_bxsec" Address("$BTG") Decimal("3000");				|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";					        |
+
 ---
 >resim call-method $CandyDex buy_xrd_sell_exact_candy 5011.39354170172335948 3000,$BTG
+
+| Transaction Manifest                                                                                                  |
+|-----------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									|
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("3000") Address("$BTG") BucketRef("badge1");		|
+|TAKE_FROM_WORKTOP Decimal("3000") Address("$BTG") Bucket("bucket1");							|
+|CALL_METHOD Address("$CandyDex") "buy_xrd_sell_exact_candy" Decimal("5011.39354170172335948") Bucket("bucket1");	|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                            |
 
 ---
 >resim show $Default-Account
@@ -1050,8 +1211,21 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 
 ├─ Ok(Some(3536.096628822524503634))
 
+| Transaction Manifest                                                                                                  |
+|-----------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_candy_buy_amount_bcsec" Address("$ALG") Decimal("5000") Address("$BTG");		|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";					        |
+
 ---
 >resim call-method $CandyDex buy_candy_sell_exact_candy 3536.096628822524503634 $ALG 5000,$BTG
+
+| Transaction Manifest                                                                                                  		|
+|---------------------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");											|
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("5000") Address("$ALG") BucketRef("badge1");				|
+|TAKE_FROM_WORKTOP Decimal("5000") Address("$ALG") Bucket("bucket1");									|
+|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_candy" Decimal("3536.096628822524503634") Address("$THG") Bucket("bucket1");	|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                          			|
 
 ---
 >resim show $Default-Account
@@ -1070,8 +1244,21 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 
 ├─ Ok(Some(5771.884297049629210901))
 
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex-Component") "get_candy_buy_amount_bcsec" Address("$BTG") Decimal("5000") Address("$ALG");  |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
+
 ---
 >resim call-method $CandyDex buy_candy_sell_exact_candy 5771.884297049629210901 $BTG 5000,$ALG
+
+| Transaction Manifest                                                                                                  		|
+|---------------------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");											|
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("5000") Address("$ALG") BucketRef("badge1");				|
+|TAKE_FROM_WORKTOP Decimal("5000") Address("$ALG") Bucket("bucket1");									|
+|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_candy" Decimal("5771.884297049629210901") Address("$BTG") Bucket("bucket1");	|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                              				|
 
 ---
 >resim show $Default-Account
