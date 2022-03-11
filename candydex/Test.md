@@ -1308,6 +1308,11 @@ Publish DummyDex Blueprint & Component instantiate
 
 └─ Component: 026c202008c0bc5323a2b57e409b4ffff0a8c30d7ce12645b21806 = $DummyDex
 
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CALL_FUNCTION Address("$Package-DummyDex") "DummyDex" "new";								   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
+
 ----------------------------------------------------------------------------------------------------------
 Publish CandyDex Blueprint & Component instantiate 
 ----------------------------------------------------------------------------------------------------------
@@ -1325,6 +1330,11 @@ Publish CandyDex Blueprint & Component instantiate
 
 └─ Component: 02ac00a15a87df7c43b55e49d5d229bc770136c108586a9d7b38b5	= $CandyDex
 
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CALL_FUNCTION Address("$Package-CandyDex") "CandyDex" "new" Decimal("1");						   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |	
+
 ----------------------------------------------------------------------------------------------------------
 Create some candy resources 
 ----------------------------------------------------------------------------------------------------------	
@@ -1333,33 +1343,97 @@ Create some candy resources
 
 └─ ResourceDef: 037395fc4a92210f3c576bd5e621a46f49643ef9b9e093828874e8 = $GMG
 
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CALL_FUNCTION Address("010000000000000000000000000000000000000000000000000001") "System" "new_resource" Enum(0u8, {18u8}) | 
+|HashMap<String, String>("name", "GAMMAGUM", "symbol", "GMG") 0u64 0u64 						   |
+|HashMap<Address, U64>() Some(Enum(0u8, {Decimal("100000")}));								   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
+
 ---
 >resim new-token-fixed --name "DELTAGUM" 100000 --symbol "DTG"
 
 └─ ResourceDef: 03d1f50010e4102d88aacc347711491f852c515134a9ecf67ba17c = $DTG
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CALL_FUNCTION Address("010000000000000000000000000000000000000000000000000001") "System" "new_resource" Enum(0u8, {18u8}) | 
+|HashMap<String, String>("name", "DELTAGUM", "symbol", "DTG") 0u64 0u64 						   |
+|HashMap<Address, U64>() Some(Enum(0u8, {Decimal("100000")}));								   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
 
 ---
 >resim new-token-fixed --name "SIGMAGUM" 100000 --symbol "SGG"
 
 └─ ResourceDef: 03c29248a0d4c7d4da7b323adfeb4b4fbe811868eb637725ebb7c1 = $SGG
 
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CALL_FUNCTION Address("010000000000000000000000000000000000000000000000000001") "System" "new_resource" Enum(0u8, {18u8}) | 
+|HashMap<String, String>("name", "SIGMAGUM", "symbol", "SGG") 0u64 0u64 						   |
+|HashMap<Address, U64>() Some(Enum(0u8, {Decimal("100000")}));								   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
+
 ----------------------------------------------------------------------------------------------------------
 Stock candies resources in CandyDex Blueprint from Default-account 
 ----------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex stock_candy 20000,$GMG 2 
->
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("20000") Address("$GMG") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("20000") Address("$GMG") Bucket("bucket1");							   |
+|CALL_METHOD Address("$CandyDex") "stock_candy" Bucket("bucket1") Decimal("2");						   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
+
+---
 >resim call-method $CandyDex stock_candy 20000,$DTG 2 
->
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("20000") Address("$DTG") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("20000") Address("$DTG") Bucket("bucket1");							   |
+|CALL_METHOD Address("$CandyDex") "stock_candy" Bucket("bucket1") Decimal("2");						   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
+
+---
 >resim call-method $CandyDex stock_candy 20000,$SGG 1.5 
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("20000") Address("$SGG") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("20000") Address("$SGG") Bucket("bucket1");							   |
+|CALL_METHOD Address("$CandyDex") "stock_candy" Bucket("bucket1") Decimal("1.5");						   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
 
 ----------------------------------------------------------------------------------------------------------
 Buy some candies to make some $XRD flowing into CandyDex Blueprint from Default-account and check balances 
 ----------------------------------------------------------------------------------------------------------	
 
 >resim call-method $CandyDex buy_exact_candy_sell_xrd 2000 $DTG 5000,$XRD
->
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("5000") Address("$XRD") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("5000") Address("$XRD") Bucket("bucket1");							   |
+|CALL_METHOD Address("$CandyDex") "buy_exact_candy_sell_xrd" Decimal("2000") Address("$DTG") Bucket("bucket1");		   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
+
+---
 >resim call-method $CandyDex buy_exact_candy_sell_xrd 2000 $DTG 7000,$XRD
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("7000") Address("$XRD") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("7000") Address("$XRD") Bucket("bucket1");							   |
+|CALL_METHOD Address("$CandyDex") "buy_exact_candy_sell_xrd" Decimal("2000") Address("$DTG") Bucket("bucket1");		   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
 
 ---
 >resim show $CandyDex
@@ -1379,16 +1453,50 @@ Stock candies resources in DummyDex Blueprint from Default-account
 ----------------------------------------------------------------------------------------------------------
 
 >resim call-method $DummyDex stock_candy 10000,$GMG 2 
->
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("10000") Address("$GMG") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("10000") Address("$GMG") Bucket("bucket1");							   |
+|CALL_METHOD Address("$DummyDex") "stock_candy" Bucket("bucket1") Decimal("2");						   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";	   					   |
+
+---
 >resim call-method $DummyDex stock_candy 10000,$DTG 1.5 
->
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("10000") Address("$DTG") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("10000") Address("$DTG") Bucket("bucket1");							   |
+|CALL_METHOD Address("$DummyDex") "stock_candy" Bucket("bucket1") Decimal("1.5");					   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";	   					   |
+
+---
 >resim call-method $DummyDex stock_candy 10000,$SGG 2 
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("10000") Address("$SGG") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("10000") Address("$SGG") Bucket("bucket1");							   |
+|CALL_METHOD Address("$DummyDex") "stock_candy" Bucket("bucket1") Decimal("2");						   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";	   					   |
 
 ----------------------------------------------------------------------------------------------------------
 Transfer some $XRD resources to DummyDex Blueprint from Default-account and check balances
 ----------------------------------------------------------------------------------------------------------
 
 >resim call-method $DummyDex put_xrd 10000,$XRD 
+
+| Transaction Manifest                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("10000") Address("$XRD") BucketRef("badge1");		   |
+|TAKE_FROM_WORKTOP Decimal("10000") Address("$XRD") Bucket("bucket1");							   |
+|CALL_METHOD Address("$DummyDex") "put_xrd" Bucket("bucket1");								   |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";	   					   |
 
 ---
 >resim show $DummyDex
@@ -1424,6 +1532,11 @@ Loan XRD & reimburse XRD
 
 ---
 >resim call-method $CandyDex flashswap 100 $XRD $XRD $DummyDex "arb_dex"
+
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "flashswap" Decimal("100") Address("$XRD") Address("$XRD") Address("$DummyDex") "arb_dex"; |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
 
 ---
 >resim show $CandyDex
@@ -1464,6 +1577,11 @@ Loan Candy & reimburse a different Candy
 
 ---
 >resim call-method $CandyDex flashswap 100 $GMG $DTG $DummyDex "arb_dex"
+
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "flashswap" Decimal("100") Address("$GMG") Address("$DTG") Address("$DummyDex") "arb_dex"; |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
 
 ---
 >resim show $CandyDex
@@ -1511,6 +1629,11 @@ Loan Candy & reimburse XRD
 ---
 >resim call-method $CandyDex flashswap 100 $SGG $XRD $DummyDex "arb_dex"
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "flashswap" Decimal("100") Address("$SGG") Address("$XRD") Address("$DummyDex") "arb_dex"; |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
+
 ---
 >resim show $CandyDex
 
@@ -1540,4 +1663,8 @@ Example of reverted transaction due to unprofitable "flashswap" method call
 
 Error: TransactionExecutionError(InvokeError(Trap(Trap { kind: Unreachable })))
 
+| Transaction Manifest                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "flashswap" Decimal("100") Address("$DTG") Address("$GMG") Address("$DummyDex") "arb_dex"; |
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
 
