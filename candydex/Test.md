@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------
-# Index
+# Index  
 -------------------------------------------------------------------------------------------	
 > [Part_1](#part_1) .Test "stock/restock/unstock" candy methods.
 > 
@@ -782,7 +782,7 @@ Let's check out our Default-account balances.
 
 └─ { amount: 99599.600107890197844194, resource_def: $OMG, name: "OMICRONGUM", symbol: "OMG" }
 ```
-___________________________________________________________________________________________
+[Back Up](#index)
 #
 ## Part_2 
 
@@ -1279,7 +1279,8 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 ├─ { amount: 55118.504445131316745489, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
 ```
 +5771.884297049629210901
-___________________________________________________________________________________________
+
+[Back Up](#index)
 #
 ## Part_3
 
@@ -1667,3 +1668,4 @@ Error: TransactionExecutionError(InvokeError(Trap(Trap { kind: Unreachable })))
 |CALL_METHOD Address("$CandyDex") "flashswap" Decimal("100") Address("$DTG") Address("$GMG") Address("$DummyDex") "arb_dex"; |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
 
+[Back Up](#index)
