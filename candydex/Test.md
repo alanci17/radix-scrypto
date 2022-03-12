@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------------------
 # Index
--------------------------------------------------------------------------------------------
-
-> Part 1. Test "stock/restock/unstock" candy methods.
+-------------------------------------------------------------------------------------------	
+> [Part_1](#part_1) .Test "stock/restock/unstock" candy methods.
 > 
-> Part 2. Test swap methods.
-> 
-> Part 3. Test "flashswap" method.
+> [Part_2](#part_2) .Test swap methods.
+>
+> [Part_3](#part_3) .Test "flashswap" method.
+#
 
--------------------------------------------------------------------------------------------
-# Part 1.Let's test "stock/restock/unstock" candy methods.
--------------------------------------------------------------------------------------------
+## Part_1 
+
+# Let's test "stock/restock/unstock" candy methods.
 -------------------------------------------------------------------------------------------
 Simulator reset & new Default-account generation
 -------------------------------------------------------------------------------------------
@@ -42,9 +42,9 @@ Publish CandyDex Blueprint & Component instantiate
 
 | Transaction Manifest
 |-----------------------------------------------------------------------------------------|
-| CALL_FUNCTION Address("$CandyDex-Package") "CandyDex" "new" Decimal("1");						    |
-| CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						  |
-															                                                            
+| CALL_FUNCTION Address("$CandyDex-Package") "CandyDex" "new" Decimal("1");	          |
+| CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";	          |
+																					   
 -------------------------------------------------------------------------------------------
 Let's check out CandyDex Component.
 -------------------------------------------------------------------------------------------
@@ -782,11 +782,10 @@ Let's check out our Default-account balances.
 └─ { amount: 99599.600107890197844194, resource_def: $OMG, name: "OMICRONGUM", symbol: "OMG" }
 
 ___________________________________________________________________________________________
--------------------------------------------------------------------------------------------
-# Part 2.Let's test swap methods.
--------------------------------------------------------------------------------------------
-___________________________________________________________________________________________
+#
+## Part_2 
 
+# Let's test swap methods.
 -------------------------------------------------------------------------------------------
 Simulator reset & new Default-account generation
 -------------------------------------------------------------------------------------------
@@ -1280,14 +1279,12 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 ├─ { amount: 55118.504445131316745489, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
 
 +5771.884297049629210901
-
-
 ___________________________________________________________________________________________
--------------------------------------------------------------------------------------------
-# Part 3.Let's test "flashswap" method.
--------------------------------------------------------------------------------------------
-___________________________________________________________________________________________
+#
+## Part_3
 
+# Let's test "stock/restock/unstock" candy methods.
+-------------------------------------------------------------------------------------------
 A.S.: Method testable with a Dummy DEX Blueprint findable at this address:
 >[DummyDex](https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs) 
 >
