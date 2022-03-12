@@ -1,8 +1,11 @@
+[![License](https://img.shields.io/badge/License-Apache_2.0-orange.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
+
 -----------------------------------------------------------------------
-1 What CandyDex is intended for and where code is developed from
+1_ What CandyDex is intended for and where code is developed from
 -----------------------------------------------------------------------
 
-CandyDex is an experimental decentralized exchange as well as an automated market maker, end users also have the possibility to request flashloans by fulfilling the condition
+CandyDex is an experimental decentralized exchange as well as an automated market maker, end users can benefit the option to request flashloans by fulfilling the condition
  to repay them with protocol determined fee in addiction .
 
 It's developed starting from Rock Howard's CandyStore Blueprint available here:
@@ -10,7 +13,7 @@ It's developed starting from Rock Howard's CandyStore Blueprint available here:
 https://github.com/RadGuild/scrypto-tutorial/blob/main/candy-store/src/lib.rs
 
 -----------------------------------------------------------------------
-2 Overview operational description
+2_ Overview operational description
 -----------------------------------------------------------------------
 
 CandyDex allows end users to provide liquidity throught single token stocking trying to avoid recurrent hassle involving impermanent loss due to double token 
@@ -50,7 +53,7 @@ A set of swap functions to perform exchanges between candy tokens and candy toke
 Flashswap function to perform flashloans with either $XRD or candy tokens.
 
 ----------------------------------------------------------------------------
-3 Math formulas
+3_ Math formulas
 ----------------------------------------------------------------------------
 >1. Swaps between different candy tokens.
 
