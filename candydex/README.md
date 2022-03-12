@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-orange.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ![](./img/CandyDex.jpg)	
-[![Credit](https://img.shields.io/badge/Pic_Credit-Akshat_Soni-lightgrey.svg)](https://www.pexels.com/@akshat-soni-1170605)
+[![Credit](https://img.shields.io/badge/Pic_Credit-Akshat_Soni-lightblue.svg)](https://www.pexels.com/@akshat-soni-1170605)
 
 -----------------------------------------------------------------------
 1_ What CandyDex is intended for and where code is developed from
@@ -12,7 +12,7 @@ CandyDex is an experimental decentralized exchange as well as an automated marke
 
 It's developed starting from Rock Howard's CandyStore Blueprint available here:
 
-https://github.com/RadGuild/scrypto-tutorial/blob/main/candy-store/src/lib.rs
+[![Github](https://img.shields.io/badge/Github-RadGuild-brightgreen.svg)](https://github.com/RadGuild/scrypto-tutorial/blob/main/candy-store/src/lib.rs)
 
 -----------------------------------------------------------------------
 2_ Overview operational description
@@ -205,9 +205,9 @@ Loan must be reimbursed with protocol determined fee in addiction.
 Protocol allows the loan of candies as well as $XRD and for reimburse are usable 
 either candies and $XRD.
 
-Function testable with a Dummy DEX Blueprint findable at this address:
-https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs
+Function testable with a Dummy DEX Blueprint findable here:
 
+[![Github](https://img.shields.io/badge/Github-Alanci17-blueviolet.svg)](https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs)
 	
 ----------------------------------------------------------------------------
 5_ Final considerations
