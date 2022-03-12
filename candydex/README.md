@@ -1,5 +1,8 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-orange.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
-
+|---------------------------------------|
+|![](./img/candydex.jpg)		|
+					
+[![Credit](https://img.shields.io/badge/Pic_Credit-Akshat_Soni-lightblue.svg)](https://www.pexels.com/@akshat-soni-1170605)
 
 -----------------------------------------------------------------------
 1_ What CandyDex is intended for and where code is developed from
@@ -58,37 +61,37 @@ Flashswap function to perform flashloans with either $XRD or candy tokens.
 >1. Swaps between different candy tokens.
 
 Let's buy A candy token amount as output and sell B candy token amount as input :
-
+```
 A_output_amount_ideal = B_input_amount * B_price/A_price 
 
 A_output_amount_real = [A_reserve/(A_reserve + A_output_amount_ideal)] * A_output_amount_ideal 
 
 A_output_amount_real = [A_reserve/(A_reserve + A_output_amount_ideal)] * B_input_amount * B_price/A_price
-
+```
 Swaps within different candy tokens doesn't affect their prices vs &XRD, but the amount of output candy is stricly connected to the protocol reserve amount.
 
 ---------------------------------
 >2. Buy candy tokens and sell $XRD.
 
 Let's buy A candy token amount as output and sell B $XRD token amount as input : 
-
+```
 A_output_amount_ideal = XRD_input_amount/A_price 
 
 A_update_price = (A_reserve * A_price)/(A_reserve - A_output_amount_ideal)
 
 A_output_amount_real = XRD_input_amount/[(A_reserve * A_price)/(A_reserve - A_output_amount_ideal)]
-
+```
 ---------------------------------
 >3. Buy $XRD tokens and sell candy.
 
 Let's buy A $XRD token amount as output and sell B candy token amount as input :
-
+```
 B_update_price = (B_reserve * B_price)/(B_reserve + B_input_amount)
 
 A_output_amount_real = B_input_amount * B_update_price
 
 A_output_amount_real = B_input_amount * (B_reserve * B_price)/(B_reserve + B_input_amount)
-
+```
 Swaps between $XRD and candy tokens affects their prices vs &XRD, updated price is stricly connected to the protocol reserve amount.
 
 
