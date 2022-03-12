@@ -67,7 +67,7 @@ A_output_amount_real = [A_reserve/(A_reserve + A_output_amount_ideal)] * A_outpu
 
 A_output_amount_real = [A_reserve/(A_reserve + A_output_amount_ideal)] * B_input_amount * B_price/A_price
 ```
-Swaps within different candy tokens doesn't affect their prices vs &XRD, but the amount of output candy is stricly connected to the protocol reserve amount.
+Swaps within different candy tokens doesn't affect their prices vs $XRD, but the amount of output candy is stricly connected to the protocol reserve amount.
 
 ---------------------------------
 >2. Buy candy tokens and sell $XRD.
@@ -91,7 +91,7 @@ A_output_amount_real = B_input_amount * B_update_price
 
 A_output_amount_real = B_input_amount * (B_reserve * B_price)/(B_reserve + B_input_amount)
 ```
-Swaps between $XRD and candy tokens affects their prices vs &XRD, updated price is stricly connected to the protocol reserve amount.
+Swaps between $XRD and candy tokens affects their prices vs $XRD, updated price is stricly connected to the protocol reserve amount.
 
 
 ----------------------------------------------------------------------------
