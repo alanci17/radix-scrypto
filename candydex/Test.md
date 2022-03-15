@@ -925,7 +925,7 @@ Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" 
 
 >resim call-method $CandyDex get_xrd_sell_amount_becsx $ALG 5000
 ```
-├─ Ok(Some(11235.955056179775277776))
+├─ Decimal("11235.955056179775277776")
 ```
 | Transaction Manifest                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------|
@@ -958,7 +958,7 @@ Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" 
 
 >resim call-method $CandyDex get_xrd_sell_amount_becsx $BTG 5000
 ```
-├─ Ok(Some(8426.966292134831459595))
+├─ Decimal("8426.966292134831459595")
 ```
 | Transaction Manifest                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------|
@@ -996,7 +996,7 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 
 >resim call-method $CandyDex get_candy_buy_amount_bcsex $ALG 10000
 ```
-├─ Ok(Some(4005.499438832772167273))
+├─ Decimal("4045.867346938775511593")
 ```
 | Transaction Manifest                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------|
@@ -1004,14 +1004,14 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";		    				     |
 
 ---
->resim call-method $CandyDex buy_candy_sell_exact_xrd 4005.499438832772167273 $ALG 10000,$XRD
+>resim call-method $CandyDex buy_candy_sell_exact_xrd 4045.867346938775511593 $ALG 10000,$XRD
 
 | Transaction Manifest                                                                                                             |
 |----------------------------------------------------------------------------------------------------------------------------------|
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");										   |
 |CALL_METHOD Address("$Default-Account") "withdraw" Decimal("10000") Address("$XRD") BucketRef("badge1");			   |
 |TAKE_FROM_WORKTOP Decimal("10000") Address("$XRD") Bucket("bucket1");								   |
-|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_xrd" Decimal("4005.499438832772167273") Address("$ALG") Bucket("bucket1"); |
+|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_xrd" Decimal("4045.867346938775511593") Address("$ALG") Bucket("bucket1"); |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                       |
 
 ---
@@ -1021,15 +1021,15 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 ```
 ├─ { amount: 970337.078651685393262624, resource_def: $XRD, name: "Radix", symbol: "XRD" }
 
-├─ { amount: 59005.499438832772167273, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
+├─ { amount: 59045.867346938775511593, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 ```
-+4005.499438832772167273
++4045.867346938775511593
 
 ----------------------------------------------
 
 >resim call-method $CandyDex get_candy_buy_amount_bcsex $BTG 10000
 
-├─ Ok(Some(5143.110113480483853111))
+├─ Decimal("5235.985473753714098268")
 
 | Transaction Manifest                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------|
@@ -1037,22 +1037,22 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
 		    				     
 ---
->resim call-method $CandyDex buy_candy_sell_exact_xrd 5143.110113480483853111 $BTG 10000,$XRD
+>resim call-method $CandyDex buy_candy_sell_exact_xrd 5235.985473753714098268 $BTG 10000,$XRD
 
 | Transaction Manifest                                                                                                             |
 |----------------------------------------------------------------------------------------------------------------------------------|
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");										   |
 |CALL_METHOD Address("$Default-Account") "withdraw" Decimal("10000") Address("$XRD") BucketRef("badge1");			   |
 |TAKE_FROM_WORKTOP Decimal("10000") Address("$XRD") Bucket("bucket1");								   |
-|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_xrd" Decimal("5143.110113480483853111") Address("$BTG") Bucket("bucket1"); |
+|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_xrd" Decimal("5235.985473753714098268") Address("$BTG") Bucket("bucket1"); |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                       |
 
 ---
 >resim show $Default-account
 
-+5143.110113480483853111
++5235.985473753714098268
 ```
-├─ { amount: 60143.110113480483853111, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
+├─ { amount: 60235.985473753714098268, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
 
 ├─ { amount: 960337.078651685393262624, resource_def: $XRD, name: "Radix", symbol: "XRD" }
 ```
@@ -1062,18 +1062,9 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy" method & check default-account balances
 -----------------------------------------------------------------------------------------------------------------------
 
->resim show $Default-Account
-```
-├─ { amount: 60143.110113480483853111, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
-
-├─ { amount: 960337.078651685393262624, resource_def: $XRD, name: "Radix", symbol: "XRD" }
-
-├─ { amount: 59005.499438832772167273, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
-```
----
 >resim call-method $CandyDex get_candy_sell_amount_bexsc $ALG 5000
 ```
-├─ Ok(Some(2145.269736455701974126))
+├─ Decimal("2173.55005206646298378")
 ```
 | Transaction Manifest                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------|
@@ -1081,13 +1072,13 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
 
 ---
->resim call-method $CandyDex buy_exact_xrd_sell_candy 5000 2145.269736455701974126,$ALG
+>resim call-method $CandyDex buy_exact_xrd_sell_candy 5000 2173.55005206646298378,$ALG
 
 | Transaction Manifest                                                                                                           |
 |--------------------------------------------------------------------------------------------------------------------------------|
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");										 |
-|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("2145.269736455701974126") Address("$ALG") BucketRef("badge1");	 |
-|TAKE_FROM_WORKTOP Decimal("2145.269736455701974126") Address("$ALG") Bucket("bucket1");					 |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("2173.55005206646298378") Address("$ALG") BucketRef("badge1");	 |
+|TAKE_FROM_WORKTOP Decimal("2173.55005206646298378") Address("$ALG") Bucket("bucket1");					 	 |
 |CALL_METHOD Address("$CandyDex") "buy_exact_xrd_sell_candy" Decimal("5000") Bucket("bucket1");					 |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                     |
 
@@ -1098,15 +1089,15 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 ```
 ├─ { amount: 965337.078651685393262624, resource_def: $XRD, name: "Radix", symbol: "XRD" }
 
-├─ { amount: 56860.229702377070193147, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
+├─ { amount: 56872.317294872312527813, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 ```
--2145.269736455701974126
+-2173.55005206646298378
 
 ----------------------------------------------------------------
 
 >resim call-method $CandyDex get_candy_sell_amount_bexsc $BTG 5000
 ```
-├─ Ok(Some(2796.489965398796318523))
+├─ Decimal("2863.504580183464650221")
 ```
 | Transaction Manifest                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------|
@@ -1114,13 +1105,13 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						     |
 
 ---
->resim call-method $CandyDex buy_exact_xrd_sell_candy 5000 2796.489965398796318523,$BTG
+>resim call-method $CandyDex buy_exact_xrd_sell_candy 5000 2863.504580183464650221,$BTG
 
 | Transaction Manifest                                                                                                        |
 |-----------------------------------------------------------------------------------------------------------------------------|
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									      |
-|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("2796.489965398796318523") Address("$BTG") BucketRef("badge1");   |
-|TAKE_FROM_WORKTOP Decimal("2796.489965398796318523") Address("$BTG") Bucket("bucket1");				      |
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("2863.504580183464650221") Address("$BTG") BucketRef("badge1");   |
+|TAKE_FROM_WORKTOP Decimal("2863.504580183464650221") Address("$BTG") Bucket("bucket1");				      |
 |CALL_METHOD Address("$CandyDex") "buy_exact_xrd_sell_candy" Decimal("5000") Bucket("bucket1");		      		      |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                  |
 
@@ -1131,9 +1122,9 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 ```
 ├─ { amount: 970337.078651685393262624, resource_def: $XRD, name: "Radix", symbol: "XRD" }
 
-├─ { amount: 57346.620148081687534588, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
+├─ { amount: 57372.480893570249448047, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
 ```
--2796.489965398796318523
+-2863,504580183464650221
 
 -----------------------------------------------------------------------------------------------------------------------
 Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" method & check default-account balances
@@ -1141,7 +1132,7 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 
 >resim call-method $CandyDex get_xrd_buy_amount_bxsec $ALG 3000
 ```
-├─ Ok(Some(6537.5007713458179066))
+├─ Decimal("6452.32299588470424501")
 ```
 | Transaction Manifest                                                                                                  |
 |-----------------------------------------------------------------------------------------------------------------------|
@@ -1149,24 +1140,24 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";					        |
 
 --- 
->resim call-method $CandyDex buy_xrd_sell_exact_candy 6537.5007713458179066 3000,$ALG
+>resim call-method $CandyDex buy_xrd_sell_exact_candy 6452.32299588470424501 3000,$ALG
 
 | Transaction Manifest                                                                                                  |
 |-----------------------------------------------------------------------------------------------------------------------|
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									|
 |CALL_METHOD Address("$Default-Account") "withdraw" Decimal("3000") Address("$ALG") BucketRef("badge1");		|
 |TAKE_FROM_WORKTOP Decimal("3000") Address("$ALG") Bucket("bucket1");							|
-|CALL_METHOD Address("$CandyDex") "buy_xrd_sell_exact_candy" Decimal("6537.5007713458179066") Bucket("bucket1");	|
+|CALL_METHOD Address("$CandyDex") "buy_xrd_sell_exact_candy" Decimal("6452.32299588470424501") Bucket("bucket1");	|
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                            |
 
 ---
 >resim show $Default-Account
 
-+6537.500771345817906375
++6452,322995884704244423
 ```
-├─ { amount: 976874.579423031211168999, resource_def: $XRD, name: "Radix", symbol: "XRD" }
+├─ { amount: 976789.401647570097507047, resource_def: $XRD, name: "Radix", symbol: "XRD" }
 
-├─ { amount: 53860.229702377070193147, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
+├─ { amount: 53872.317294872312527813, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 ```
 -3000
 
@@ -1174,7 +1165,7 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 
 >resim call-method $CandyDex get_xrd_buy_amount_bxsec $BTG 3000
 ```
-├─ Ok(Some(5011.39354170172335948))
+├─ Decimal("4893.91676935180419015")
 ```
 | Transaction Manifest                                                                                                  |
 |-----------------------------------------------------------------------------------------------------------------------|
@@ -1182,24 +1173,24 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";					        |
 
 ---
->resim call-method $CandyDex buy_xrd_sell_exact_candy 5011.39354170172335948 3000,$BTG
+>resim call-method $CandyDex buy_xrd_sell_exact_candy 4893.91676935180419015 3000,$BTG
 
 | Transaction Manifest                                                                                                  |
 |-----------------------------------------------------------------------------------------------------------------------|
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									|
 |CALL_METHOD Address("$Default-Account") "withdraw" Decimal("3000") Address("$BTG") BucketRef("badge1");		|
 |TAKE_FROM_WORKTOP Decimal("3000") Address("$BTG") Bucket("bucket1");							|
-|CALL_METHOD Address("$CandyDex") "buy_xrd_sell_exact_candy" Decimal("5011.39354170172335948") Bucket("bucket1");	|
+|CALL_METHOD Address("$CandyDex") "buy_xrd_sell_exact_candy" Decimal("4893.91676935180419015") Bucket("bucket1");	|
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                            |
 
 ---
 >resim show $Default-Account
 
-5011.393541701723358577
++4893,916769351804189387
 ```
-├─ { amount: 981885.972964732934527576, resource_def: $XRD, name: "Radix", symbol: "XRD" }
+├─ { amount: 981683.318416921901696434, resource_def: $XRD, name: "Radix", symbol: "XRD" }
 
-├─ { amount: 54346.620148081687534588, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
+├─ { amount: 54372.480893570249448047, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
 ```
 -3000 
 
@@ -1211,14 +1202,14 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 
 >resim show $Default-Account
 ```
-├─ { amount: 53860.229702377070193147, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
+├─ { amount: 53872.317294872312527813, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 
-├─ { amount: 54346.620148081687534588, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
+├─ { amount: 54372.480893570249448047, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
 ```
 ---
 >resim call-method $CandyDex get_candy_buy_amount_bcsec $ALG 5000 $BTG
 ```
-├─ Ok(Some(3536.096628822524503634))
+├─ Decimal("3501.579327852255786347")
 ```
 | Transaction Manifest                                                                                                  |
 |-----------------------------------------------------------------------------------------------------------------------|
@@ -1226,24 +1217,24 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";					        |
 
 ---
->resim call-method $CandyDex buy_candy_sell_exact_candy 3536.096628822524503634 $ALG 5000,$BTG
+>resim call-method $CandyDex buy_candy_sell_exact_candy 3501.579327852255786347 $ALG 5000,$BTG
 
 | Transaction Manifest                                                                                                  		|
 |---------------------------------------------------------------------------------------------------------------------------------------|
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");											|
 |CALL_METHOD Address("$Default-Account") "withdraw" Decimal("5000") Address("$ALG") BucketRef("badge1");				|
 |TAKE_FROM_WORKTOP Decimal("5000") Address("$ALG") Bucket("bucket1");									|
-|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_candy" Decimal("3536.096628822524503634") Address("$THG") Bucket("bucket1");	|
+|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_candy" Decimal("3501.579327852255786347") Address("$ALG") Bucket("bucket1");	|
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                          			|
 
 ---
 >resim show $Default-Account
 
-+3536,096628822524503634
++3501.579327852255786347
 ```
-├─ { amount: 57396.326331199594696781, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
+├─ { amount: 57373.89662272456831416, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 
-├─ { amount: 49346.620148081687534588, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
+├─ { amount: 49372.480893570249448047, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
 ```
 -5000
 
@@ -1251,7 +1242,7 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 
 >resim call-method $CandyDex get_candy_buy_amount_bcsec $BTG 5000 $ALG
 
-├─ Ok(Some(5771.884297049629210901))
+├─ Decimal("5825.932438133595144962")
 
 | Transaction Manifest                                                                                                     |
 |--------------------------------------------------------------------------------------------------------------------------|
@@ -1259,14 +1250,14 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
 
 ---
->resim call-method $CandyDex buy_candy_sell_exact_candy 5771.884297049629210901 $BTG 5000,$ALG
+>resim call-method $CandyDex buy_candy_sell_exact_candy 5825.932438133595144962 $BTG 5000,$ALG
 
 | Transaction Manifest                                                                                                  		|
 |---------------------------------------------------------------------------------------------------------------------------------------|
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");											|
 |CALL_METHOD Address("$Default-Account") "withdraw" Decimal("5000") Address("$ALG") BucketRef("badge1");				|
 |TAKE_FROM_WORKTOP Decimal("5000") Address("$ALG") Bucket("bucket1");									|
-|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_candy" Decimal("5771.884297049629210901") Address("$BTG") Bucket("bucket1");	|
+|CALL_METHOD Address("$CandyDex") "buy_candy_sell_exact_candy" Decimal("5825.932438133595144962") Address("$BTG") Bucket("bucket1");	|
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                              				|
 
 ---
@@ -1274,11 +1265,79 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 
 -5000
 ```
-├─ { amount: 52396.326331199594696781, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
+├─ { amount: 52373.89662272456831416, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 
-├─ { amount: 55118.504445131316745489, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
+├─ { amount: 55198.413331703844593009, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
 ```
-+5771.884297049629210901
++5825.932438133595144962
+
+--------------------------------------------------------------------------------------------------------------------------
+Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_candy" method & check default-account balances 
+--------------------------------------------------------------------------------------------------------------------------
+
+>resim call-method $CandyDex get_candy_sell_amount_becsc 5000 $ALG $BTG
+```
+├─ Decimal("7374.181373608690958584")
+```
+| Transaction Manifest                                                                                                  |
+|-----------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_candy_sell_amount_becsc" Address("$ALG") Decimal("5000") Address("$BTG");	|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						|
+
+---
+>resim call-method $CandyDex buy_exact_candy_sell_candy 5000 $ALG 7374.181373608690958584,$BTG
+
+| Transaction Manifest                                                                                                  		|
+|---------------------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");											|
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("7374.181373608690958584") Address("$BTG") BucketRef("badge1");		|
+|TAKE_FROM_WORKTOP Decimal("7374.181373608690958584") Address("$BTG") Bucket("bucket1");						|
+|CALL_METHOD Address("$Candydex") "buy_exact_candy_sell_candy" Decimal("5000") Address("$ALG") Bucket("bucket1");			|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                          			|
+
+---
+>resim show $Default-Account
+
++5000
+```
+├─ { amount: 57373.89662272456831416, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
+
+├─ { amount: 47824.231958095153634425, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
+```
+-7374,181373608690958584
+
+------------------------------------------------------------------
+
+>resim call-method $CandyDex get_candy_sell_amount_becsc 5000 $BTG $ALG
+```
+├─ Decimal("4198,80347228503780403")
+```
+| Transaction Manifest                                                                                                  |
+|-----------------------------------------------------------------------------------------------------------------------|
+|CALL_METHOD Address("$CandyDex") "get_candy_sell_amount_becsc" Address("$BTG") Decimal("5000") Address("$ALG");	|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";					        |
+
+---
+>resim call-method $CandyDex buy_exact_candy_sell_candy 5000 $BTG 4198,80347228503780403,$ALG
+
+| Transaction Manifest                                                                                                  		|
+|---------------------------------------------------------------------------------------------------------------------------------------|
+|CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");											|
+|CALL_METHOD Address("$Default-Account") "withdraw" Decimal("4198,80347228503780403") Address("$ALG") BucketRef("badge1");		|
+|TAKE_FROM_WORKTOP Decimal("4198,80347228503780403") Address("$ALG") Bucket("bucket1");							|
+|CALL_METHOD Address("$Candydex") "buy_exact_candy_sell_candy" Decimal("5000") Address("$BTG") Bucket("bucket1");			|
+|CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                          			|
+
+---
+>resim show $Default-Account
+
+4198,80347228503780403
+```
+├─ { amount: 53175.09315043953051013, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
+
+├─ { amount: 52824.231958095153634425, resource_def: $BTG, name: "BETAGUM", symbol: "BTG" }
+```
++5000
 
 [Back Up](#index)
 #
