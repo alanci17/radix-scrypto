@@ -57,9 +57,9 @@ Flashswap function to perform flashloans with either $XRD or candy tokens.
 ----------------------------------------------------------------------------
 3_ Math formulas
 ----------------------------------------------------------------------------
->1. Swaps between different candy tokens.
+>1. Swaps between different Candy tokens.
 
-Let's buy A candy token amount as output and sell B candy token amount as input :
+Let's buy A Candy token amount as output and sell B Candy token amount as input :
 ```
 A_output_amount_ideal = B_input_amount * B_price/A_price 
 
@@ -67,12 +67,20 @@ A_output_amount_real = [A_reserve/(A_reserve + A_output_amount_ideal)] * A_outpu
 
 A_output_amount_real = [A_reserve/(A_reserve + A_output_amount_ideal)] * B_input_amount * B_price/A_price
 ```
-Swaps within different candy tokens doesn't affect their prices vs $XRD, but the amount of output candy is stricly connected to the protocol reserve amount.
+Swaps within different Candy tokens doesn't affect their prices vs $XRD, but the amount of output candy is stricly connected to the protocol reserve amount.
 
+Output curve details Protocol's swap methods whom exchange Candy tokens for Candy tokens :
+
+![](./img/buy_candy_sell_exact_candy.jpg)	
+![](./img/buy_exact_candy_sell_candy.jpg)	
+
+Output curve detail Uniswap v2 style Dexes rule by formula ```x * y = ( x + dx) * ( y - dy )``` :
+
+![](./img/uniswap_v2.jpg)	
 ---------------------------------
->2. Buy candy tokens and sell $XRD.
+>2. Buy Candy tokens and sell $XRD.
 
-Let's buy A candy token amount as output and sell B $XRD token amount as input : 
+Let's buy A Candy token amount as output and sell B $XRD token amount as input : 
 ```
 A_output_amount_ideal = XRD_input_amount/A_price 
 
@@ -80,10 +88,16 @@ A_update_price = (A_reserve * A_price)/(A_reserve - A_output_amount_ideal)
 
 A_output_amount_real = XRD_input_amount/[(A_reserve * A_price)/(A_reserve - A_output_amount_ideal)]
 ```
----------------------------------
->3. Buy $XRD tokens and sell candy.
 
-Let's buy A $XRD token amount as output and sell B candy token amount as input :
+Output curve details Protocol's swap methods whom buy Candy tokens and sell XRD tokens :
+
+![](./img/buy_candy_sell_exact_xrd.jpg)	
+![](./img/buy_exact_candy_sell_xrd.jpg)
+
+---------------------------------
+>3. Buy $XRD tokens and sell Candy.
+
+Let's buy A $XRD token amount as output and sell B Candy token amount as input :
 ```
 B_update_price = (B_reserve * B_price)/(B_reserve + B_input_amount)
 
@@ -91,9 +105,12 @@ A_output_amount_real = B_input_amount * B_update_price
 
 A_output_amount_real = B_input_amount * (B_reserve * B_price)/(B_reserve + B_input_amount)
 ```
-Swaps between $XRD and candy tokens affects their prices vs $XRD, updated price is stricly connected to the protocol reserve amount.
+Swaps between $XRD and Candy tokens affects their prices vs $XRD, updated price is stricly connected to the protocol reserve amount.
 
+Output curve details Protocol's swap methods whom buy XRD tokens and sell Candy tokens :
 
+![](./img/buy_exact_xrd_sell_candy.jpg)	
+![](./img/buy_xrd_sell_exact_candy.jpg)
 ----------------------------------------------------------------------------
 4_ Callable functions and brief description
 ----------------------------------------------------------------------------
