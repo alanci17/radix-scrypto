@@ -3,8 +3,22 @@
 ![](./img/CandyDex.jpg)	
 [![Credit](https://img.shields.io/badge/Pic_Credit-Akshat_Soni-lightblue.svg)](https://www.pexels.com/@akshat-soni-1170605)
 
------------------------------------------------------------------------
-1_ What CandyDex is intended for and where code is developed from
+-------------------------------------------------------------------------------------------
+### Index  
+-------------------------------------------------------------------------------------------	
+> [Part_1](#part_1) . What and Where
+> 
+> [Part_2](#part_2) . Overview operational description
+>
+> [Part_3](#part_3) . Math formulas and output charts
+>
+> [Part_4](#part_4) . Callable methods and brief description
+>
+> [Part_5](#part_5) . Final considerations
+#
+
+### Part_1 
+What CandyDex is intended for and where code is developed from
 -----------------------------------------------------------------------
 
 CandyDex is an experimental decentralized exchange as well as an automated market maker, end users can benefit the option to request flashloans by fulfilling the condition
@@ -14,8 +28,9 @@ It's developed starting from Rock Howard's CandyStore Blueprint available here:
 
 [![Github](https://img.shields.io/badge/Github-RadGuild-brightgreen.svg)](https://github.com/RadGuild/scrypto-tutorial/blob/main/candy-store/src/lib.rs)
 
------------------------------------------------------------------------
-2_ Overview operational description
+#
+### Part_2
+Overview operational description
 -----------------------------------------------------------------------
 
 CandyDex allows end users to provide liquidity throught single token stocking trying to avoid recurrent hassle involving impermanent loss due to double token 
@@ -54,8 +69,10 @@ A set of swap functions to perform exchanges between candy tokens and XRD tokens
 A set of swap functions to perform exchanges between candy tokens and candy tokens and viceversa.
 Flashswap function to perform flashloans with either $XRD or candy tokens.
 
-----------------------------------------------------------------------------
-3_ Math formulas
+[Back Up](#index)
+#
+### Part_3
+Math formulas and output charts
 ----------------------------------------------------------------------------
 >1. Swaps between different Candy tokens.
 
@@ -69,12 +86,12 @@ A_output_amount_real = [A_reserve/(A_reserve + A_output_amount_ideal)] * B_input
 ```
 Swaps within different Candy tokens doesn't affect their prices vs $XRD, but the amount of output candy is stricly connected to the protocol reserve amount.
 
-Output curve details Protocol's swap methods whom exchange Candy tokens for Candy tokens :
+>1.1. Output curve details Protocol's swap methods whom exchange Candy tokens for Candy tokens :
 
 ![](./img/buy_candy_sell_exact_candy.jpg)	
 ![](./img/buy_exact_candy_sell_candy.jpg)	
 
-Output curve detail Uniswap v2 style Dexes rule by formula ```x * y = ( x + dx) * ( y - dy )``` :
+>1.2. Output curve detail Uniswap v2 style Dexes rule by formula ```x * y = ( x + dx) * ( y - dy )``` :
 
 ![](./img/uniswap_v2.jpg)	
 ---------------------------------
@@ -89,7 +106,7 @@ A_update_price = (A_reserve * A_price)/(A_reserve - A_output_amount_ideal)
 A_output_amount_real = XRD_input_amount/[(A_reserve * A_price)/(A_reserve - A_output_amount_ideal)]
 ```
 
-Output curve details Protocol's swap methods whom buy Candy tokens and sell XRD tokens :
+>2.1. Output curve details Protocol's swap methods whom buy Candy tokens and sell XRD tokens :
 
 ![](./img/buy_candy_sell_exact_xrd.jpg)	
 ![](./img/buy_exact_candy_sell_xrd.jpg)
@@ -107,12 +124,15 @@ A_output_amount_real = B_input_amount * (B_reserve * B_price)/(B_reserve + B_inp
 ```
 Swaps between $XRD and Candy tokens affects their prices vs $XRD, updated price is stricly connected to the protocol reserve amount.
 
-Output curve details Protocol's swap methods whom buy XRD tokens and sell Candy tokens :
+>3.1. Output curve details Protocol's swap methods whom buy XRD tokens and sell Candy tokens :
 
 ![](./img/buy_exact_xrd_sell_candy.jpg)	
 ![](./img/buy_xrd_sell_exact_candy.jpg)
-----------------------------------------------------------------------------
-4_ Callable functions and brief description
+
+[Back Up](#index)
+#
+### Part_4
+Callable methods and brief description
 ----------------------------------------------------------------------------
 >1. set_fee
 
@@ -225,15 +245,19 @@ either candies and $XRD.
 Function testable with a Dummy DEX Blueprint findable here:
 
 [![Github](https://img.shields.io/badge/Github-Alanci17-blueviolet.svg)](https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs)
-	
-----------------------------------------------------------------------------
-5_ Final considerations
+
+[Back Up](#index)
+#
+### Part_5	
+Final considerations
 ----------------------------------------------------------------------------	
 A mechanism of further revenue distribution revolving with epochs, for instance bonus tokens minting and so on, lacks in the protocol.
 User recognizing mechanism also lacks.
 
 Protocol's code is untested aside simulator environment.	
-	
+
+[Back Up](#index)
+
 	
 	
 	
