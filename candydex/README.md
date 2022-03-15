@@ -86,12 +86,12 @@ A_output_amount_real = [A_reserve/(A_reserve + A_output_amount_ideal)] * B_input
 ```
 Swaps within different Candy tokens doesn't affect their prices vs $XRD, but the amount of output candy is stricly connected to the protocol reserve amount.
 
->1.1. Output curve details Protocol's swap methods whom exchange Candy tokens for Candy tokens :
+>1.1. Output curve details of CandyDex swap methods whom exchange Candy tokens for Candy tokens :
 
 ![](./img/buy_candy_sell_exact_candy.jpg)	
 ![](./img/buy_exact_candy_sell_candy.jpg)	
 
->1.2. Output curve detail Uniswap v2 style Dexes rule by formula ```x * y = ( x + dx) * ( y - dy )``` :
+>1.2. Output curve detail of Uniswap v2 style Dexes ruled by formula ```x * y = ( x + dx) * ( y - dy )``` :
 
 ![](./img/uniswap_v2.jpg)	
 ---------------------------------
@@ -106,7 +106,7 @@ A_update_price = (A_reserve * A_price)/(A_reserve - A_output_amount_ideal)
 A_output_amount_real = XRD_input_amount/[(A_reserve * A_price)/(A_reserve - A_output_amount_ideal)]
 ```
 
->2.1. Output curve details Protocol's swap methods whom buy Candy tokens and sell XRD tokens :
+>2.1. Output curve details of CandyDex swap methods whom buy Candy tokens and sell XRD tokens :
 
 ![](./img/buy_candy_sell_exact_xrd.jpg)	
 ![](./img/buy_exact_candy_sell_xrd.jpg)
@@ -124,7 +124,7 @@ A_output_amount_real = B_input_amount * (B_reserve * B_price)/(B_reserve + B_inp
 ```
 Swaps between $XRD and Candy tokens affects their prices vs $XRD, updated price is stricly connected to the protocol reserve amount.
 
->3.1. Output curve details Protocol's swap methods whom buy XRD tokens and sell Candy tokens :
+>3.1. Output curve details of CandyDex swap methods whom buy XRD tokens and sell Candy tokens :
 
 ![](./img/buy_exact_xrd_sell_candy.jpg)	
 ![](./img/buy_xrd_sell_exact_candy.jpg)
