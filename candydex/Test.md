@@ -2,7 +2,11 @@
 # Index  
 -------------------------------------------------------------------------------------------	
 > [Part_1](#part_1) . Test "stock/restock/unstock" candy methods.
-> 
+>	+  [1.1](#part_1_1) . "stock_candy" method
+>	+  [1.2](#part_1_2) . "restock_candy" method
+>	+  [1.3](#part_1_3) . "stock_position" method
+>	+  [1.4](#part_1_4) . "unstock_candy" method
+>
 > [Part_2](#part_2) . Test swap methods.
 >	+  [2.1](#part_2_1) . "buy_exact_candy_sell_xrd" method
 >	+  [2.2](#part_2_2) . "buy_candy_sell_exact_xrd" method
@@ -11,7 +15,7 @@
 >	+  [2.5](#part_2_5) . "buy_candy_sell_exact_candy" method
 >	+  [2.6](#part_2_6) . "buy_candy_sell_exact_candy" method
 >		
-> [Part_3](#part_3) .Test "flashswap" method.
+> [Part_3](#part_3) . Test "flashswap" method.
 > 	+  [3.1](#part_3_1) . Borrow XRD & reimburse XRD
 > 	+  [3.2](#part_3_2) . Borrow Candy & reimburse a different Candy
 > 	+  [3.3](#part_3_3) . Borrow Candy & reimburse XRD
@@ -106,6 +110,7 @@ Let's check out our Default-account.
 └─ { amount: 100000, resource_def: $OMG, name: "OMICRONGUM", symbol: "OMG" }
 ```
 -------------------------------------------------------------------------------------------
+## part_1_1
 Let's stock candies, inspect resturned resources and Default-account balances.
 -------------------------------------------------------------------------------------------
 
@@ -290,6 +295,7 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
 -------------------------------------------------------------------------------------------
+## part_1_2
 Let's try to stock same candies again using "restock_candy" method. 
 -------------------------------------------------------------------------------------------
 
@@ -404,6 +410,7 @@ Let's check out Default-account balances.
 └─ { amount: 30000, resource_def: $mTHETAGUM, name: " mTHETAGUM", symbol: " mTHG" }
 ```
 -------------------------------------------------------------------------------------------
+## part_1_3
 Let's check out our stock positions plus accrued gains with "stock_position" method.
 -------------------------------------------------------------------------------------------
 
@@ -539,6 +546,7 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
 -------------------------------------------------------------------------------------------
+## part_1_4
 Let's unstock some candies.  
 -------------------------------------------------------------------------------------------
 
@@ -1347,7 +1355,7 @@ Let's stock candies and check Default-account balances.
 ---
 >resim show $Default-Account
 
-4198,80347228503780403
+-4198,80347228503780403
 ```
 ├─ { amount: 53175.09315043953051013, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 
