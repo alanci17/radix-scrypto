@@ -1369,10 +1369,9 @@ Let's stock candies and check Default-account balances.
 
 # Let's test "flashswap" method.
 -------------------------------------------------------------------------------------------
-A.S.: Method testable with a Dummy DEX Blueprint findable at this address:
->[DummyDex](https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs) 
+>A.S.: Method testable with a Dummy DEX Blueprint findable at this address:
 >
->https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs
+>[![Github](https://img.shields.io/badge/Github-Alanci17-blueviolet.svg)](https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs)
 
 ----------------------------------------------------------------------------------------------------------
 Simulator reset & new Default-account generation
