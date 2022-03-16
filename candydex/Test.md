@@ -21,9 +21,7 @@
 > 	+  [3.3](#part_3_3) . Borrow Candy & reimburse XRD
 > 	+  [3.4](#part_3_4) . Example of reverted transaction due to unprofitable "flashswap" method call
 #
-
-## Part_1 
-
+### Part_1 
 # Let's test "stock/restock/unstock" candy methods.
 -------------------------------------------------------------------------------------------
 Simulator reset & new Default-account generation
@@ -110,7 +108,8 @@ Let's check out our Default-account.
 └─ { amount: 100000, resource_def: $OMG, name: "OMICRONGUM", symbol: "OMG" }
 ```
 -------------------------------------------------------------------------------------------
-## part_1_1
+#
+### part_1_1
 Let's stock candies, inspect resturned resources and Default-account balances.
 -------------------------------------------------------------------------------------------
 
@@ -295,7 +294,8 @@ Let's swap some candies to gain some accrued fee profit.
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
 -------------------------------------------------------------------------------------------
-## part_1_2
+#
+### part_1_2
 Let's try to stock same candies again using "restock_candy" method. 
 -------------------------------------------------------------------------------------------
 
@@ -410,7 +410,8 @@ Let's check out Default-account balances.
 └─ { amount: 30000, resource_def: $mTHETAGUM, name: " mTHETAGUM", symbol: " mTHG" }
 ```
 -------------------------------------------------------------------------------------------
-## part_1_3
+#
+### part_1_3
 Let's check out our stock positions plus accrued gains with "stock_position" method.
 -------------------------------------------------------------------------------------------
 
@@ -546,7 +547,8 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";                                                 |
 
 -------------------------------------------------------------------------------------------
-## part_1_4
+#
+### part_1_4
 Let's unstock some candies.  
 -------------------------------------------------------------------------------------------
 
@@ -802,8 +804,7 @@ Let's check out our Default-account balances.
 ```
 [Back Up](#index)
 #
-## Part_2 
-
+### Part_2 
 # Let's test swap methods.
 -------------------------------------------------------------------------------------------
 Simulator reset & new Default-account generation
@@ -938,8 +939,9 @@ Let's stock candies and check Default-account balances.
 └─ { amount: 50000, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 ```
 -----------------------------------------------------------------------------------------------------------------------
-## part_2_1
-## Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" method & check default-account balances
+#
+### part_2_1
+Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" method & check default-account balances
 -----------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_xrd_sell_amount_becsx $ALG 5000
@@ -1010,8 +1012,9 @@ Let's stock candies and check Default-account balances.
 >P.S. Due to calculation approximation , to obtain the exact output amount required, sometimes it could required to round in excess last numbers of the fractional part >beyond dot (17/18).
 
 ------------------------------------------------------------------------------------------------------------------------
-## part_2_2
-## Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd" method & check default-account balances
+#
+### part_2_2
+Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd" method & check default-account balances
 ------------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_candy_buy_amount_bcsex $ALG 10000
@@ -1079,8 +1082,9 @@ Let's stock candies and check Default-account balances.
 -10000
 
 -----------------------------------------------------------------------------------------------------------------------
-## part_2_3
-## Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy" method & check default-account balances
+#
+### part_2_3
+Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy" method & check default-account balances
 -----------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_candy_sell_amount_bexsc $ALG 5000
@@ -1148,8 +1152,9 @@ Let's stock candies and check Default-account balances.
 -2863,504580183464650221
 
 -----------------------------------------------------------------------------------------------------------------------
-## part_2_4
-## Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" method & check default-account balances
+#
+### part_2_4
+Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" method & check default-account balances
 -----------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_xrd_buy_amount_bxsec $ALG 3000
@@ -1219,8 +1224,9 @@ Let's stock candies and check Default-account balances.
 >P.S. Due to calculation approximation, protocol return an output amount in defect by last numbers of the fractional part beyond dot (15/16).
 
 --------------------------------------------------------------------------------------------------------------------------
-## part_2_5
-## Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_candy" method & check default-account balances
+#
+### part_2_5
+Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_candy" method & check default-account balances
 --------------------------------------------------------------------------------------------------------------------------
 
 >resim show $Default-Account
@@ -1295,8 +1301,9 @@ Let's stock candies and check Default-account balances.
 +5825.932438133595144962
 
 --------------------------------------------------------------------------------------------------------------------------
-## part_2_6
-## Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_candy" method & check default-account balances 
+#
+### part_2_6
+Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_candy" method & check default-account balances 
 --------------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_candy_sell_amount_becsc 5000 $ALG $BTG
@@ -1365,8 +1372,7 @@ Let's stock candies and check Default-account balances.
 
 [Back Up](#index)
 #
-## Part_3
-
+### Part_3
 # Let's test "flashswap" method.
 -------------------------------------------------------------------------------------------
 >A.S.: Method testable with a Dummy DEX Blueprint findable at this address:
@@ -1497,7 +1503,7 @@ Stock candies resources in CandyDex Blueprint from Default-account
 |CLONE_BUCKET_REF BucketRef(1u32) BucketRef("badge1");									   |
 |CALL_METHOD Address("$Default-Account") "withdraw" Decimal("20000") Address("$SGG") BucketRef("badge1");		   |
 |TAKE_FROM_WORKTOP Decimal("20000") Address("$SGG") Bucket("bucket1");							   |
-|CALL_METHOD Address("$CandyDex") "stock_candy" Bucket("bucket1") Decimal("1.5");						   |
+|CALL_METHOD Address("$CandyDex") "stock_candy" Bucket("bucket1") Decimal("1.5");					   |
 |CALL_METHOD_WITH_ALL_RESOURCES Address("$Default-Account") "deposit_batch";						   |
 
 ----------------------------------------------------------------------------------------------------------
@@ -1600,12 +1606,10 @@ Transfer some $XRD resources to DummyDex Blueprint from Default-account and chec
 └─ { amount: 10000, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }
 ```
 ----------------------------------------------------------------------------------------------------------
-Check balances, Call "flashswap" method on CandyDex Blueprint & verify amounts
----------------------------------------------------------------------------------------------------------- 
-
-----------------------------------------------------------------------------------------------------------
-## part_3_1
-## Borrow XRD & reimburse XRD
+## Check balances, Call "flashswap" method on CandyDex Blueprint & verify amounts
+#
+### part_3_1
+Borrow XRD & reimburse XRD
 ----------------------------------------------------------------------------------------------------------
 >resim show $CandyDex
 ```
@@ -1640,8 +1644,9 @@ Check balances, Call "flashswap" method on CandyDex Blueprint & verify amounts
 ├─ { amount: 980452.04606599525561818, resource_def: $XRD, name: "Radix", symbol: "XRD" }	 +9.000000000000000000
 ```
 ----------------------------------------------------------------------------------------------------------
-## part_3_2
-## Borrow Candy & reimburse a different Candy
+#
+### part_3_2
+Borrow Candy & reimburse a different Candy
 ----------------------------------------------------------------------------------------------------------
 
 >resim show $CandyDex
@@ -1690,8 +1695,9 @@ Check balances, Call "flashswap" method on CandyDex Blueprint & verify amounts
 ├─ { amount: 74052.725923658583591204, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }    +52.725923658583591204
 ```
 ----------------------------------------------------------------------------------------------------------
-## part_3_3
-## Borrow Candy & reimburse XRD
+#
+### part_3_3
+Borrow Candy & reimburse XRD
 ----------------------------------------------------------------------------------------------------------
 
 >resim show $CandyDex
@@ -1739,8 +1745,9 @@ Check balances, Call "flashswap" method on CandyDex Blueprint & verify amounts
 ├─ { amount: 980500.54606599525561818, resource_def: $XRD, name: "Radix", symbol: "XRD" }    +48.500000000000000000
 ```
 ----------------------------------------------------------------------------------------------------------
-## part_3_4
-## Example of reverted transaction due to unprofitable "flashswap" method call
+#
+### part_3_4
+Example of reverted transaction due to unprofitable "flashswap" method call
 ----------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex flashswap 100 $DTG $GMG $DummyDex "arb_dex"
