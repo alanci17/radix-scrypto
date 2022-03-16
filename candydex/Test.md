@@ -788,7 +788,7 @@ Let's check out our Default-account balances.
 
 ├─ { amount: 0, resource_def: $mTHETAGUM, name: " mTHETAGUM", symbol: " mTHG" }
 
-├─ { amount: 99602.951747218141765154, resource_def: $THG, name: "THETAGUM", symbol: "THG" }
+├─ { amount: 99399.843801283119809953, resource_def: $THG, name: "THETAGUM", symbol: "THG" }
 
 ├─ { amount: 0, resource_def: $mBadgeOMG_0, symbol: " mBadgeOMG" }
 
@@ -798,7 +798,7 @@ Let's check out our Default-account balances.
 
 ├─ { amount: 0, resource_def: $mOMICRONGUM, name: " mOMICRONGUM", symbol: " mOMG" }
 
-└─ { amount: 99599.600107890197844194, resource_def: $OMG, name: "OMICRONGUM", symbol: "OMG" }
+└─ { amount: 99397.576325596498385148, resource_def: $OMG, name: "OMICRONGUM", symbol: "OMG" }
 ```
 [Back Up](#index)
 #
@@ -1647,21 +1647,21 @@ Check balances, Call "flashswap" method on CandyDex Blueprint & verify amounts
 
 >resim show $CandyDex
 ```
-├─ { amount: 20001, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }
+├─ { amount: 20000, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }
 
-├─ { amount: 16001, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }
+├─ { amount: 16000, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }
 ```
 >resim show $DummyDex
 ```
-├─ { amount: 9990, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }
+├─ { amount: 10000, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }
 
-└─ { amount: 9990, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }
+└─ { amount: 10000, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }
 ```
 >resim show $Defaul-account
 ```
-├─ { amount: 74009, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }
+├─ { amount: 74000, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }
 
-├─ { amount: 70009, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }
+├─ { amount: 70000, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }
 ```
 ---
 >resim call-method $CandyDex flashswap 100 $GMG $DTG $DummyDex "arb_dex"
@@ -1674,21 +1674,21 @@ Check balances, Call "flashswap" method on CandyDex Blueprint & verify amounts
 ---
 >resim show $CandyDex
 ```
-├─ { amount: 19901, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }		        -100.000000000000000000
+├─ { amount: 19900, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }		        -100.000000000000000000
 
-├─ { amount: 16081.607409674749742129, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }    +80.607409674749742129
+├─ { amount: 16080.607409674749742129, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }    +80.607409674749742129
 ```
 >resim show $DummyDex
 ```
-├─ { amount: 10090, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }		       +100.000000000000000000
+├─ { amount: 10100, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }		       +100.000000000000000000
 
-└─ { amount: 9856.666666666666666667, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }    -133.333333333333333333
+└─ { amount: 9866.666666666666666667, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }    -133.333333333333333333
 ```
 >resim show $Defaul-account
 ```
-├─ { amount: 70009, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }		         +0.000000000000000000
+├─ { amount: 70000, resource_def: $GMG, name: "GAMMAGUM", symbol: "GMG" }		         +0.000000000000000000
 
-├─ { amount: 74061.725923658583591204, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }    +52.725923658583591204
+├─ { amount: 74052.725923658583591204, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }    +52.725923658583591204
 ```
 ----------------------------------------------------------------------------------------------------------
 ## part_3_3
