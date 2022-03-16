@@ -1,10 +1,16 @@
 -------------------------------------------------------------------------------------------
 # Index  
 -------------------------------------------------------------------------------------------	
-> [Part_1](#part_1) .Test "stock/restock/unstock" candy methods.
+> [Part_1](#part_1) . Test "stock/restock/unstock" candy methods.
 > 
-> [Part_2](#part_2) .Test swap methods.
->
+> [Part_2](#part_2) . Test swap methods.
+>	+  [2.1](#part_2_1) . "buy_exact_candy_sell_xrd" method
+>	+  [2.2](#part_2_2) .
+>	+  [2.3](#part_2_3) .
+>	+  [2.4](#part_2_4) .
+>	+  [2.5](#part_2_5) .
+>	+  [2.6](#part_2_6) .
+>		
 > [Part_3](#part_3) .Test "flashswap" method.
 #
 
@@ -838,7 +844,7 @@ Let's create some candy tokens.
 
 >resim new-token-fixed --name "ALPHAGUM" 100000 --symbol "ALG"
 ```
-└─ ResourceDef: $THG = $ALG
+└─ ResourceDef: $ALG
 ```
 | Transaction Manifest                                                                                                      |
 |---------------------------------------------------------------------------------------------------------------------------|
@@ -850,7 +856,7 @@ Let's create some candy tokens.
 ---
 >resim new-token-fixed --name "BETAGUM" 100000 --symbol "BTG"
 ```
-└─ ResourceDef: $OMG = $BTG
+└─ ResourceDef: $BTG
 ```
 | Transaction Manifest                                                                                                      |
 |---------------------------------------------------------------------------------------------------------------------------|
@@ -920,7 +926,8 @@ Let's stock candies and check Default-account balances.
 └─ { amount: 50000, resource_def: $ALG, name: "ALPHAGUM", symbol: "ALG" }
 ```
 -----------------------------------------------------------------------------------------------------------------------
-Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" method & check default-account balances
+## part_2_1
+## Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" method & check default-account balances
 -----------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_xrd_sell_amount_becsx $ALG 5000
@@ -991,7 +998,8 @@ Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" 
 >P.S. Due to calculation approximation , to obtain the exact output amount required, sometimes it could required to round in excess last numbers of the fractional part >beyond dot (17/18).
 
 ------------------------------------------------------------------------------------------------------------------------
-Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd" method & check default-account balances
+## part_2_2
+## Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd" method & check default-account balances
 ------------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_candy_buy_amount_bcsex $ALG 10000
@@ -1059,7 +1067,8 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 -10000
 
 -----------------------------------------------------------------------------------------------------------------------
-Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy" method & check default-account balances
+## part_2_3
+## Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy" method & check default-account balances
 -----------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_candy_sell_amount_bexsc $ALG 5000
@@ -1127,7 +1136,8 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 -2863,504580183464650221
 
 -----------------------------------------------------------------------------------------------------------------------
-Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" method & check default-account balances
+## part_2_4
+## Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" method & check default-account balances
 -----------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_xrd_buy_amount_bxsec $ALG 3000
@@ -1197,7 +1207,8 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 >P.S. Due to calculation approximation, protocol return an output amount in defect by last numbers of the fractional part beyond dot (15/16).
 
 --------------------------------------------------------------------------------------------------------------------------
-Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_candy" method & check default-account balances
+## part_2_5
+## Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_candy" method & check default-account balances
 --------------------------------------------------------------------------------------------------------------------------
 
 >resim show $Default-Account
@@ -1272,7 +1283,8 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 +5825.932438133595144962
 
 --------------------------------------------------------------------------------------------------------------------------
-Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_candy" method & check default-account balances 
+## part_2_6
+## Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_candy" method & check default-account balances 
 --------------------------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex get_candy_sell_amount_becsc 5000 $ALG $BTG
