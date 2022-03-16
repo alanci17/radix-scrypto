@@ -5,13 +5,17 @@
 > 
 > [Part_2](#part_2) . Test swap methods.
 >	+  [2.1](#part_2_1) . "buy_exact_candy_sell_xrd" method
->	+  [2.2](#part_2_2) .
->	+  [2.3](#part_2_3) .
->	+  [2.4](#part_2_4) .
->	+  [2.5](#part_2_5) .
->	+  [2.6](#part_2_6) .
+>	+  [2.2](#part_2_2) . "buy_candy_sell_exact_xrd" method
+>	+  [2.3](#part_2_3) . "buy_exact_xrd_sell_candy" method
+>	+  [2.4](#part_2_4) . "buy_xrd_sell_exact_candy" method
+>	+  [2.5](#part_2_5) . "buy_candy_sell_exact_candy" method
+>	+  [2.6](#part_2_6) . "buy_candy_sell_exact_candy" method
 >		
 > [Part_3](#part_3) .Test "flashswap" method.
+> 	+  [3.1](#part_3_1) . Borrow XRD & reimburse XRD
+> 	+  [3.2](#part_3_2) . Borrow Candy & reimburse a different Candy
+> 	+  [3.3](#part_3_3) . Borrow Candy & reimburse XRD
+> 	+  [3.4](#part_3_4) . Example of reverted transaction due to unprofitable "flashswap" method call
 #
 
 ## Part_1 
@@ -1355,7 +1359,7 @@ Let's stock candies and check Default-account balances.
 #
 ## Part_3
 
-# Let's test "stock/restock/unstock" candy methods.
+# Let's test "flashswap" method.
 -------------------------------------------------------------------------------------------
 A.S.: Method testable with a Dummy DEX Blueprint findable at this address:
 >[DummyDex](https://github.com/alanci17/radix-scrypto/blob/main/dummydex/src/lib.rs) 
@@ -1593,7 +1597,8 @@ Check balances, Call "flashswap" method on CandyDex Blueprint & verify amounts
 ---------------------------------------------------------------------------------------------------------- 
 
 ----------------------------------------------------------------------------------------------------------
-Loan XRD & reimburse XRD
+## part_3_1
+## Borrow XRD & reimburse XRD
 ----------------------------------------------------------------------------------------------------------
 >resim show $CandyDex
 ```
@@ -1628,7 +1633,8 @@ Loan XRD & reimburse XRD
 ├─ { amount: 980452.04606599525561818, resource_def: $XRD, name: "Radix", symbol: "XRD" }	 +9.000000000000000000
 ```
 ----------------------------------------------------------------------------------------------------------
-Loan Candy & reimburse a different Candy
+## part_3_2
+## Borrow Candy & reimburse a different Candy
 ----------------------------------------------------------------------------------------------------------
 
 >resim show $CandyDex
@@ -1677,7 +1683,8 @@ Loan Candy & reimburse a different Candy
 ├─ { amount: 74061.725923658583591204, resource_def: $DTG, name: "DELTAGUM", symbol: "DTG" }    +52.725923658583591204
 ```
 ----------------------------------------------------------------------------------------------------------
-Loan Candy & reimburse XRD
+## part_3_3
+## Borrow Candy & reimburse XRD
 ----------------------------------------------------------------------------------------------------------
 
 >resim show $CandyDex
@@ -1725,7 +1732,8 @@ Loan Candy & reimburse XRD
 ├─ { amount: 980500.54606599525561818, resource_def: $XRD, name: "Radix", symbol: "XRD" }    +48.500000000000000000
 ```
 ----------------------------------------------------------------------------------------------------------
-Example of reverted transaction due to unprofitable "flashswap" method call
+## part_3_4
+## Example of reverted transaction due to unprofitable "flashswap" method call
 ----------------------------------------------------------------------------------------------------------
 
 >resim call-method $CandyDex flashswap 100 $DTG $GMG $DummyDex "arb_dex"
