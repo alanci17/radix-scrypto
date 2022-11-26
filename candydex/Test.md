@@ -24,12 +24,16 @@
 # Wording  
 -------------------------------------------------------------------------------------------
 
->function  [String]	```name_of_the_function```  
+>function  [String]	```name_of_the_function``` 
+> 
 >method    [String]	```name_of_the_method```  
 >
 >arguments [Bucket] 	```[Decimal(Bucket_amount)]),[ResourceAddress(Bucket_resource_address)])```
+>
 >arguments [resource] 	```[ResourceAddress(resource_address)])```
+>
 >arguments [component]	```[ComponentAddress(component_address)])```
+>
 >arguments [value] 	```[Decimal(amount)])```
 
 #
@@ -59,7 +63,9 @@ Publish CandyDex Blueprint & Component instantiate
 >function ```new```  arguments ```1``` 
 
 > cd transaction_manifest
+> 
 > modify data on ```candydex_instantiate```
+> 
 > ```candydex_instantiate.sh```
 
 ```
@@ -116,7 +122,9 @@ Let's stock candies, inspect resturned resources and Default-account balances.
 >method ```stock_candy```  arguments ```10000,$THG 2``` 
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```
 
 ```
@@ -132,7 +140,9 @@ Let's stock candies, inspect resturned resources and Default-account balances.
 >method ```stock_candy```  arguments ```10000,$OMG 2```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```
  
 ```
@@ -166,28 +176,36 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```stock_candy```  arguments ```500 $THG 2000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
 >method ```stock_candy```  arguments ```500 $OMG 2000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
 >method ```stock_candy```  arguments ```500 $THG 2000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
 >method ```stock_candy```  arguments ```500 $OMG 2000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 -------------------------------------------------------------------------------------------
@@ -197,7 +215,9 @@ Let's try to stock same candies again using "restock_candy" method.
 >method ```restock_candy```  arguments ```10000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```restock_candy```
+> 
 > ```restock_candy.sh```
 
 ```
@@ -211,7 +231,9 @@ Let's try to stock same candies again using "restock_candy" method.
 >method ```restock_candy```  arguments ```10000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```restock_candy```
+> 
 > ```restock_candy.sh```
 
 ```
@@ -230,7 +252,9 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $THG 2000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
@@ -238,7 +262,9 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $OMG 2000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
@@ -246,7 +272,9 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $THG 2000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
@@ -254,7 +282,9 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $OMG 2000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 -------------------------------------------------------------------------------------------
@@ -266,7 +296,9 @@ Let's try to stock same candies again using "restock_candy" method.
 >method ```restock_candy```  arguments ```10000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```restock_candy```
+> 
 > ```restock_candy.sh```
 
 ```
@@ -281,7 +313,9 @@ Let's try to stock same candies again using "restock_candy" method.
 >method ```restock_candy```  arguments ```10000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```restock_candy```
+> 
 > ```restock_candy.sh```
 
 ```
@@ -299,7 +333,9 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $THG 2000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
@@ -307,7 +343,9 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $OMG 2000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
@@ -315,7 +353,9 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $THG 2000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 ---
@@ -323,7 +363,9 @@ Let's swap some candies to gain some accrued fee profit.
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $OMG 2000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 -------------------------------------------------------------------------------------------
@@ -365,7 +407,9 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 >method ```stock_position```  arguments ```1,$mBadgeTHG_0```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_position```
+> 
 > ```stock_position.sh```
 
 ```
@@ -385,7 +429,9 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 >method ```stock_position```  arguments ```1,$mBadgeTHG_2```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_position```
+> 
 > ```stock_position.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -404,7 +450,9 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 >method ```stock_position```  arguments ```1,$mBadgeTHG_1```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_position```
+> 
 > ```stock_position.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -423,7 +471,9 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 >method ```stock_position```  arguments ```1,$mBadgeOMG_0```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_position```
+> 
 > ```stock_position.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -442,7 +492,9 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 >method ```stock_position```  arguments ```1,$mBadgeOMG_1```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_position```
+> 
 > ```stock_position.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -461,7 +513,9 @@ Let's check out our stock positions plus accrued gains with "stock_position" met
 >method ```stock_position```  arguments ```1,$mBadgeOMG_2```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_position```
+> 
 > ```stock_position.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m accrued_fee 30.30303030303030303 ←[0m
@@ -484,7 +538,9 @@ Let's unstock some candies.
 >method ```unstock_candy```  arguments ```$THG 10000,$mTHETAGUM 1,$mBadgeTHG_0```
 
 > cd transaction_manifest
+> 
 > modify data on ```unstock_candy```
+> 
 > ```unstock_candy.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -503,7 +559,9 @@ Let's unstock some candies.
 >method ```unstock_candy```  arguments ```$THG 10000,$mTHETAGUM 1,$mBadgeTHG_1```
 
 > cd transaction_manifest
+> 
 > modify data on ```unstock_candy```
+> 
 > ```unstock_candy.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -522,7 +580,9 @@ Let's unstock some candies.
 >method ```unstock_candy```  arguments ```$OMG 10000,$mOMICRONGUM 1,$mBadgeOMG_0```
 
 > cd transaction_manifest
+> 
 > modify data on ```unstock_candy```
+> 
 > ```unstock_candy.sh``` 
 ```
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -541,7 +601,9 @@ Let's unstock some candies.
 >method ```unstock_candy```  arguments ```$OMG 10000,$mOMICRONGUM 1,$mBadgeOMG_1```
 
 > cd transaction_manifest
+> 
 > modify data on ```unstock_candy```
+> 
 > ```unstock_candy.sh``` 
 ```
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -569,7 +631,9 @@ Let's issue another candy token, stock it & swap some candies to rebalance Candy
 >method ```stock_candy```  arguments ```10000,$ETG 2```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh``` 
 ```
 └─ [←[32mINFO ←[0m] ←[32m Added 10000 ETAGUM candy, ETG symbol @2XRD price
@@ -584,7 +648,9 @@ Let's issue another candy token, stock it & swap some candies to rebalance Candy
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $ETG 2000,$OMG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 
@@ -593,7 +659,9 @@ Let's issue another candy token, stock it & swap some candies to rebalance Candy
 >method ```buy_exact_candy_sell_candy```  arguments ```500 $ETG 2000,$THG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh``` 
 
 
@@ -604,7 +672,9 @@ Let's unstock last candies.
 >method ```unstock_candy```  arguments ```$THG 10000,$mTHETAGUM 1,$mBadgeTHG_2```
 
 > cd transaction_manifest
+> 
 > modify data on ```unstock_candy```
+> 
 > ```unstock_candy.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -623,7 +693,9 @@ Let's unstock last candies.
 >method ```unstock_candy```  arguments ```$OMG 5000,$mOMICRONGUM 1,$mBadgeOMG_2```
 
 > cd transaction_manifest
+> 
 > modify data on ```unstock_candy```
+> 
 > ```unstock_candy.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -642,7 +714,9 @@ Let's unstock last candies.
 >method ```unstock_candy```  arguments ```$OMG 5000,$mOMICRONGUM 1,$mBadgeOMG_2```
 
 > cd transaction_manifest
+> 
 > modify data on ```unstock_candy```
+> 
 > ```unstock_candy.sh```
 ```
 ├─ [←[32mINFO ←[0m] ←[32m total_minted 30000 
@@ -763,7 +837,9 @@ Let's stock candies and check Default-account balances.
 >method ```stock_candy```  arguments ```50000,$ALG 2```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh``` 
 ```
 └─ [←[32mINFO ←[0m] ←[32m Added 50000 ALPHAGUM candy, ALG symbol @2XRD price
@@ -778,7 +854,9 @@ Let's stock candies and check Default-account balances.
 >method ```stock_candy```  arguments ```50000,$BTG 1.5```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```  
 ```
 └─ [←[32mINFO ←[0m] ←[32m Added 50000 BETAGUM candy, BTG symbol @1.5XRD price
@@ -806,7 +884,9 @@ Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" 
 >method ```get_xrd_sell_amount_becsx```  arguments ```$ALG 5000```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_xrd_sell_amount_becsx```
+> 
 > ```get_xrd_sell_amount_becsx.sh```  
 ```
 ├─ Decimal("11235.955056179775277776")
@@ -832,7 +912,9 @@ Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" 
 >method ```get_xrd_sell_amount_becsx```  arguments ```$BTG 5000```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_xrd_sell_amount_becsx```
+> 
 > ```get_xrd_sell_amount_becsx.sh```  
 ```
 ├─ Decimal("8426.966292134831459595")
@@ -843,7 +925,9 @@ Test "get_xrd_sell_amount_becsx" method coupled with "buy_exact_candy_sell_xrd" 
 >method ```buy_exact_candy_sell_xrd```  arguments ```5000 $BTG 8426.966292134831459597,$XRD```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_xrd```
+> 
 > ```buy_exact_candy_sell_xrd.sh```  
 
 
@@ -870,7 +954,9 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 >method ```get_candy_buy_amount_bcsex```  arguments ```$ALG 10000```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_candy_buy_amount_bcsex```
+> 
 > ```get_candy_buy_amount_bcsex.sh```  
 
 ```
@@ -882,7 +968,9 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 >method ```buy_candy_sell_exact_xrd```  arguments ```4045.867346938775511593 $ALG 10000,$XRD```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_candy_sell_exact_xrd```
+> 
 > ```buy_candy_sell_exact_xrd.sh```  
 
 
@@ -902,7 +990,9 @@ Test "get_candy_buy_amount_bcsex" method coupled with "buy_candy_sell_exact_xrd"
 >method ```get_candy_buy_amount_bcsex```  arguments ```$BTG 10000```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_candy_buy_amount_bcsex```
+> 
 > ```get_candy_buy_amount_bcsex.sh```  
 
 
@@ -933,7 +1023,9 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 >method ```get_candy_sell_amount_bexsc```  arguments ```$ALG 5000```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_candy_sell_amount_bexsc```
+> 
 > ```get_candy_sell_amount_bexsc.sh```  
 
 ```
@@ -945,7 +1037,9 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 >method ```buy_exact_xrd_sell_candy```  arguments ```5000 2173.55005206646298378,$ALG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_xrd_sell_candy```
+> 
 > ```buy_exact_xrd_sell_candy.sh```
 
 ---
@@ -964,7 +1058,9 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 >method ```get_candy_sell_amount_bexsc```  arguments ```$BTG 5000```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_candy_sell_amount_bexsc```
+> 
 > ```get_candy_sell_amount_bexsc.sh```
 
 ```
@@ -976,7 +1072,9 @@ Test "get_candy_sell_amount_bexsc" method coupled with "buy_exact_xrd_sell_candy
 >method ```buy_exact_xrd_sell_candy```  arguments ```5000 2863.504580183464650221,$BTG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_xrd_sell_candy```
+> 
 > ```buy_exact_xrd_sell_candy.sh```
 
 
@@ -1001,7 +1099,9 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 >method ```get_xrd_buy_amount_bxsec```  arguments ```$ALG 3000```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_xrd_buy_amount_bxsec```
+> 
 > ```get_xrd_buy_amount_bxsec.sh```
 
 ```
@@ -1012,7 +1112,9 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 >method ```buy_xrd_sell_exact_candy```  arguments ```6452.32299588470424501 3000,$ALG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_xrd_sell_exact_candy```
+> 
 > ```buy_xrd_sell_exact_candy.sh```
 
 
@@ -1032,7 +1134,9 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 >method ```get_xrd_buy_amount_bxsec```  arguments ```$BTG 3000```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_xrd_buy_amount_bxsec```
+> 
 > ```get_xrd_buy_amount_bxsec.sh```
 ```
 ├─ Decimal("4893.91676935180419015")
@@ -1043,7 +1147,9 @@ Test "get_xrd_buy_amount_bxsec" method coupled with "buy_xrd_sell_exact_candy" m
 >method ```buy_xrd_sell_exact_candy```  arguments ```4893.91676935180419015 3000,$BTG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_xrd_sell_exact_candy```
+> 
 > ```buy_xrd_sell_exact_candy.sh```
 
 
@@ -1078,7 +1184,9 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 >method ```get_candy_buy_amount_bcsec```  arguments ```$ALG 5000 $BTG```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_candy_buy_amount_bcsec```
+> 
 > ```get_candy_buy_amount_bcsec.sh```
 
 ```
@@ -1090,7 +1198,9 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 >method ```buy_candy_sell_exact_candy```  arguments ```3501.579327852255786347 $ALG 5000,$BTG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_candy_sell_exact_candy```
+> 
 > ```buy_candy_sell_exact_candy.sh```
 
 
@@ -1111,7 +1221,9 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 >method ```get_candy_buy_amount_bcsec```  arguments ```$BTG 5000 $ALG```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_candy_buy_amount_bcsec```
+> 
 > ```get_candy_buy_amount_bcsec.sh```
 
 ```
@@ -1123,7 +1235,9 @@ Test "get_candy_buy_amount_bcsec" method coupled with "buy_candy_sell_exact_cand
 >method ```buy_candy_sell_exact_candy```  arguments ```5825.932438133595144962 $BTG 5000,$ALG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_candy_sell_exact_candy```
+> 
 > ```buy_candy_sell_exact_candy.sh```
 
 ---
@@ -1146,7 +1260,9 @@ Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_can
 >method ```get_candy_sell_amount_becsc```  arguments ```5000 $ALG $BTG```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_candy_sell_amount_becsc```
+> 
 > ```get_candy_sell_amount_becsc.sh```
 
 ```
@@ -1158,7 +1274,9 @@ Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_can
 >method ```buy_exact_candy_sell_candy```  arguments ```5000 $ALG 7374.181373608690958584,$BTG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 
@@ -1178,7 +1296,9 @@ Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_can
 >method ```get_candy_sell_amount_becsc```  arguments ```5000 $BTG $ALG```
 
 > cd transaction_manifest
+> 
 > modify data on ```get_candy_sell_amount_becsc```
+> 
 > ```get_candy_sell_amount_becsc.sh```
 
 ```
@@ -1190,7 +1310,9 @@ Test "get_candy_sell_amount_becsc" method coupled with "buy_exact_candy_sell_can
 >method ```buy_exact_candy_sell_candy```  arguments ```5000 $BTG 4198,80347228503780403,$ALG```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_candy```
+> 
 > ```buy_exact_candy_sell_candy.sh```
 
 
@@ -1239,7 +1361,9 @@ Publish DummyDex Blueprint & Component instantiate
 >function ```new```  
 
 > cd DummyDex/transaction_manifest
+> 
 > modify data on ```dummydex_instantiate```
+> 
 > ```dummydex_instantiate.sh```
 ```
 └─ Component: 026c202008c0bc5323a2b57e409b4ffff0a8c30d7ce12645b21806 = $DummyDex
@@ -1259,7 +1383,9 @@ Publish CandyDex Blueprint & Component instantiate
 >function ```new```  arguments ```1``` 
 
 > cd CandyDex/transaction_manifest
+> 
 > modify data on ```candydex_instantiate```
+> 
 > ```candydex_instantiate.sh```
 
 ```
@@ -1297,7 +1423,9 @@ Stock candies resources in CandyDex Blueprint from Default-account
 >method ```stock_candy```  arguments ```20000,$GMG 2```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```
 
 
@@ -1306,7 +1434,9 @@ Stock candies resources in CandyDex Blueprint from Default-account
 >method ```stock_candy```  arguments ```20000,$DTG 2```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```
 
 
@@ -1315,7 +1445,9 @@ Stock candies resources in CandyDex Blueprint from Default-account
 >method ```stock_candy```  arguments ```20000,$SGG 1.5```
 
 > cd transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```
 
 
@@ -1326,7 +1458,9 @@ Buy some candies to make some $XRD flowing into CandyDex Blueprint from Default-
 >method ```buy_exact_candy_sell_xrd```  arguments ```2000 $DTG 5000,$XRD```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_xrd```
+> 
 > ```buy_exact_candy_sell_xrd.sh```
 
 
@@ -1336,7 +1470,9 @@ Buy some candies to make some $XRD flowing into CandyDex Blueprint from Default-
 >method ```buy_exact_candy_sell_xrd```  arguments ```2000 $DTG 7000,$XRD```
 
 > cd transaction_manifest
+> 
 > modify data on ```buy_exact_candy_sell_xrd```
+> 
 > ```buy_exact_candy_sell_xrd.sh```
 
 
@@ -1360,7 +1496,9 @@ Stock candies resources in DummyDex Blueprint from Default-account
 >method ```stock_candy```  arguments ```10000,$GMG 2```
 
 > cd DummyDex/transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```
 
 
@@ -1369,7 +1507,9 @@ Stock candies resources in DummyDex Blueprint from Default-account
 >method ```stock_candy```  arguments ```10000,$DTG 1.5```
 
 > cd DummyDex/transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```
 
 ---
@@ -1377,7 +1517,9 @@ Stock candies resources in DummyDex Blueprint from Default-account
 >method ```stock_candy```  arguments ```10000,$SGG 2```
 
 > cd DummyDex/transaction_manifest
+> 
 > modify data on ```stock_candy```
+> 
 > ```stock_candy.sh```
 
 ----------------------------------------------------------------------------------------------------------
@@ -1387,7 +1529,9 @@ Transfer some $XRD resources to DummyDex Blueprint from Default-account and chec
 >method ```put_xrd```  arguments ```10000,$XRD```
 
 > cd DummyDex/transaction_manifest
+> 
 > modify data on ```put_xrd```
+> 
 > ```put_xrd.sh```
 
 ---
@@ -1423,7 +1567,9 @@ Borrow XRD & reimburse XRD
 >method ```flashswap```  arguments ```100 $XRD $XRD $DummyDex "arb_dex"```
 
 > cd CandyDex/transaction_manifest
+> 
 > modify data on ```flashswap```
+> 
 > ```flashswap.sh```
 
 
@@ -1470,7 +1616,9 @@ Borrow Candy & reimburse a different Candy
 >method ```flashswap```  arguments ```100 $GMG $DTG $DummyDex "arb_dex"```
 
 > cd CandyDex/transaction_manifest
+> 
 > modify data on ```flashswap```
+> 
 > ```flashswap.sh```
 
 
@@ -1521,7 +1669,9 @@ Borrow Candy & reimburse XRD
 >method ```flashswap```  arguments ```100 $SGG $XRD $DummyDex "arb_dex"```
 
 > cd CandyDex/transaction_manifest
+> 
 > modify data on ```flashswap```
+> 
 > ```flashswap.sh```
 
 ---
@@ -1552,7 +1702,9 @@ Example of reverted transaction due to unprofitable "flashswap" method call
 >method ```flashswap```  arguments ```100 $DTG $GMG $DummyDex "arb_dex""```
 
 > cd CandyDex/transaction_manifest
+> 
 > modify data on ```flashswap```
+> 
 > ```flashswap.sh```
 
 ```
